@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="F:/BAckup/DFC Repo Connection/activation.jar"/>
+	<classpathentry kind="lib" path="F:/BAckup/DFC Repo Connection/All-MB.jar"/>
+	<classpathentry kind="lib" path="F:/BAckup/DFC Repo Connection/aspectjrt.jar"/>
+	<classpathentry kind="lib" path="F:/BAckup/DFC Repo Connection/bpmutil.jar"/>
+	<classpathentry kind="lib" path="F:/BAckup/DFC Repo Connection/certj.jar"/>
+	<classpathentry kind="lib" path="F:/BAckup/DFC Repo Connection/ci.jar"/>
+	<classpathentry kind="lib" path="F:/BAckup/DFC Repo Connection/collaboration.jar"/>
+	<classpathentry kind="lib" path="F:/BAckup/DFC Repo Connection/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="F:/BAckup/DFC Repo Connection/commons-lang-2.4.jar"/>
+	<classpathentry kind="lib" path="F:/BAckup/DFC Repo Connection/configservice-api.jar"/>
+	<classpathentry kind="lib" path="F:/BAckup/DFC Repo Connection/configservice-impl.jar"/>
+	<classpathentry kind="lib" path="F:/BAckup/DFC Repo Connection/cryptoj.jar"/>
+	<classpathentry kind="lib" path="F:/BAckup/DFC Repo Connection/cryptojce.jar"/>
+	<classpathentry kind="lib" path="F:/BAckup/DFC Repo Connection/cryptojcommon.jar"/>
+	<classpathentry kind="lib" path="F:/BAckup/DFC Repo Connection/dfc.jar"/>
+	<classpathentry kind="lib" path="F:/BAckup/DFC Repo Connection/DmcRecords.jar"/>
+	<classpathentry kind="lib" path="F:/BAckup/DFC Repo Connection/dms-client-api.jar"/>
+	<classpathentry kind="lib" path="F:/BAckup/DFC Repo Connection/jaxb-api.jar"/>
+	<classpathentry kind="lib" path="F:/BAckup/DFC Repo Connection/jaxb-impl.jar"/>
+	<classpathentry kind="lib" path="F:/BAckup/DFC Repo Connection/jcifs-krb5-1.3.1.jar"/>
+	<classpathentry kind="lib" path="F:/BAckup/DFC Repo Connection/jcm.jar"/>
+	<classpathentry kind="lib" path="F:/BAckup/DFC Repo Connection/jcmandroidfips.jar"/>
+	<classpathentry kind="lib" path="F:/BAckup/DFC Repo Connection/jcmFIPS.jar"/>
+	<classpathentry kind="lib" path="F:/BAckup/DFC Repo Connection/jsr173_api.jar"/>
+	<classpathentry kind="lib" path="F:/BAckup/DFC Repo Connection/krbutil.jar"/>
+	<classpathentry kind="lib" path="F:/BAckup/DFC Repo Connection/log4j.jar"/>
+	<classpathentry kind="lib" path="F:/BAckup/DFC Repo Connection/messageArchive.jar"/>
+	<classpathentry kind="lib" path="F:/BAckup/DFC Repo Connection/messageService.jar"/>
+	<classpathentry kind="lib" path="F:/BAckup/DFC Repo Connection/questFixForJDK7.jar"/>
+	<classpathentry kind="lib" path="F:/BAckup/DFC Repo Connection/servlet-api.jar"/>
+	<classpathentry kind="lib" path="F:/BAckup/DFC Repo Connection/subscription.jar"/>
+	<classpathentry kind="lib" path="F:/BAckup/DFC Repo Connection/util.jar"/>
+	<classpathentry kind="lib" path="F:/BAckup/DFC Repo Connection/vsj-license.jar"/>
+	<classpathentry kind="lib" path="F:/BAckup/DFC Repo Connection/vsj-standard-3.3.jar"/>
+	<classpathentry kind="lib" path="F:/BAckup/DFC Repo Connection/workflow.jar"/>
+	<classpathentry kind="lib" path="F:/BAckup/DFC Repo Connection/xtrim-api.jar"/>
+	<classpathentry kind="lib" path="F:/BAckup/DFC Repo Connection/xtrim-server.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
