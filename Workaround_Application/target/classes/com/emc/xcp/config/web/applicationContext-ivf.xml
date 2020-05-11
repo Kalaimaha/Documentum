@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<beans xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd" xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <bean class="com.emc.xcp.ivf.runtime.Format2ViewerMapping">
+        <property name="formatMapping">
+            <map>
+                <entry key="mpeg-4v" value="VideoViewer"/>
+                <entry key="ogg" value="VideoViewer"/>
+                <entry key="webm" value="VideoViewer"/>
+                <entry key="3gp" value="VideoViewer"/>
+                <entry key="3g2" value="VideoViewer"/>
+                <entry key="asf" value="VideoViewer"/>
+                <entry key="avi" value="VideoViewer"/>
+                <entry key="flv" value="VideoViewer"/>
+                <entry key="f4v" value="VideoViewer"/>
+                <entry key="mpeg" value="VideoViewer"/>
+                <entry key="m4v" value="VideoViewer"/>
+                <entry key="quicktime" value="VideoViewer"/>
+                <entry key="wmv" value="VideoViewer"/>
+                <entry key="pdf" value="ContentViewer"/>
+                <entry key="tiff" value="ContentViewer"/>
+                <entry key="jpeg" value="ContentViewer"/>
+                <entry key="jpeg_preview" value="ContentViewer"/>
+                <entry key="gif" value="ContentViewer"/>
+                <entry key="png" value="ContentViewer"/>
+                <entry key="bmp" value="ContentViewer"/>
+                <entry key="msw" value="ContentViewer"/>
+                <entry key="msw8" value="ContentViewer"/>
+                <entry key="msw12" value="ContentViewer"/>
+                <entry key="msw14" value="ContentViewer"/>
+                <entry key="msw15" value="ContentViewer"/>
+                <entry key="ppt8" value="ContentViewer"/>
+                <entry key="ppt12" value="ContentViewer"/>
+                <entry key="ppt14" value="ContentViewer"/>
+                <entry key="ppt15" value="ContentViewer"/>
+                <entry key="powerpoint" value="ContentViewer"/>
+                <entry key="excel8book" value="ContentViewer"/>
+                <entry key="excel12book" value="ContentViewer"/>
+                <entry key="excel14book" value="ContentViewer"/>
+                <entry key="excel15book" value="ContentViewer"/>
+                <entry key="excel" value="ContentViewer"/>
+                <entry key="msg" value="ContentViewer"/>
+            </map>
+        </property>
+    </bean>
+</beans>

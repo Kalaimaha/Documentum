@@ -1,0 +1,93 @@
+{
+  "cls" : "wa_application_parameter",
+  "padding" : 0,
+  "border" : false,
+  "namespace" : "wa",
+  "categoryID" : "com_emc_xcp_artifact_page",
+  "artifactName" : "application_parameter",
+  "pageTitle" : "${_UI_Page_wa_application_parameter_title}",
+  "xtype" : "xcp_form",
+  "items" : [ {
+    "xtype" : "xcp_action_container",
+    "actions" : [ ]
+  }, {
+    "xtype" : "xcp_uievent_publisher",
+    "plugins" : [ {
+      "ptype" : "xcp_publish_uievents",
+      "publish" : [ ]
+    } ]
+  }, {
+    "xcpId" : "column_box",
+    "xtype" : "xcp_column_box",
+    "collapsible" : false,
+    "collapseFirst" : true,
+    "border" : false,
+    "defaultMargins" : "5",
+    "layout" : "xcp_columnbox",
+    "items" : [ {
+      "xcpId" : "columnhbox",
+      "xtype" : "xcp_columnhbox",
+      "orientation" : "Horizontal",
+      "width" : "100%",
+      "overflow_x" : "hidden",
+      "labelWidth" : 50,
+      "defaultMargins" : "5",
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "bottom",
+      "items" : [ {
+        "xcpId" : "rich_text",
+        "xtype" : "xcp_rich_text",
+        "html" : "${_UI_Page_wa_application_parameter_rich_text_html}",
+        "hideErrorInToolTip" : false,
+        "stopOnValidationFail" : true
+      } ]
+    } ]
+  }, {
+    "xcpId" : "app_param_container",
+    "xtype" : "xcp_app_param_container"
+  }, {
+    "xcpId" : "column_box1",
+    "xtype" : "xcp_column_box",
+    "collapsible" : false,
+    "collapseFirst" : true,
+    "border" : false,
+    "defaultMargins" : "5",
+    "layout" : "xcp_columnbox",
+    "items" : [ {
+      "xcpId" : "columnhbox1",
+      "xtype" : "xcp_columnhbox",
+      "orientation" : "Horizontal",
+      "width" : "100%",
+      "overflow_x" : "hidden",
+      "labelWidth" : 50,
+      "defaultMargins" : "5",
+      "labelAlign" : "left",
+      "halign" : "right",
+      "valign" : "top",
+      "items" : [ {
+        "xcpId" : "button",
+        "xtype" : "xcp_button",
+        "text" : "${_UI_Page_wa_application_parameter_button_text}",
+        "scale" : "small",
+        "badgeAlign" : "top-right",
+        "iconAlign" : "left",
+        "action" : {
+          "actionType" : "updateparameters"
+        }
+      }, {
+        "xcpId" : "cancel_goto_homepage",
+        "xtype" : "xcp_button",
+        "text" : "${_UI_Page_wa_application_parameter_cancel_goto_homepage_text}",
+        "scale" : "small",
+        "badgeAlign" : "top-right",
+        "iconAlign" : "left",
+        "redirectStyle" : "specified",
+        "navPageId" : "xcp_user_preferences",
+        "action" : {
+          "actionType" : "xcp_gotopage"
+        }
+      } ]
+    } ]
+  } ]
+}

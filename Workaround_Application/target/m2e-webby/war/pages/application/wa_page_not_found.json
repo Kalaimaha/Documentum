@@ -1,0 +1,159 @@
+{
+  "cls" : "wa_page_not_found",
+  "padding" : 0,
+  "border" : false,
+  "namespace" : "wa",
+  "categoryID" : "com_emc_xcp_artifact_page",
+  "artifactName" : "page_not_found",
+  "pageTitle" : "${_UI_Page_wa_page_not_found_title}",
+  "xtype" : "xcp_form",
+  "items" : [ {
+    "xtype" : "xcp_action_container",
+    "actions" : [ ]
+  }, {
+    "xtype" : "xcp_uievent_publisher",
+    "plugins" : [ {
+      "ptype" : "xcp_publish_uievents",
+      "publish" : [ ]
+    } ]
+  }, {
+    "xcpId" : "column_box",
+    "xtype" : "xcp_column_box",
+    "collapsible" : false,
+    "collapseFirst" : true,
+    "border" : false,
+    "defaultMargins" : "5",
+    "layout" : "xcp_columnbox",
+    "items" : [ {
+      "xcpId" : "columnvbox",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5"
+    }, {
+      "xcpId" : "columnvbox1",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "width" : "500",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "50 0 5 5",
+      "items" : [ {
+        "xcpId" : "column_box1",
+        "xtype" : "xcp_column_box",
+        "collapsible" : false,
+        "collapseFirst" : true,
+        "border" : false,
+        "defaultMargins" : "5",
+        "layout" : "xcp_columnbox",
+        "cls" : "x-window-default",
+        "items" : [ {
+          "xcpId" : "columnvbox3",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "column_box2",
+            "xtype" : "xcp_column_box",
+            "collapsible" : false,
+            "collapseFirst" : true,
+            "border" : false,
+            "defaultMargins" : "5",
+            "layout" : "xcp_columnbox",
+            "items" : [ {
+              "xcpId" : "columnvbox4",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "labelAlign" : "left",
+              "halign" : "left",
+              "valign" : "top",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "header",
+                "xtype" : "xcp_rich_text",
+                "html" : "${_UI_Page_wa_page_not_found_header_html}",
+                "hideErrorInToolTip" : false,
+                "stopOnValidationFail" : true
+              }, {
+                "xcpId" : "column_box3",
+                "xtype" : "xcp_column_box",
+                "collapsible" : false,
+                "collapseFirst" : true,
+                "border" : false,
+                "defaultMargins" : "5",
+                "layout" : "xcp_columnbox",
+                "items" : [ {
+                  "xcpId" : "columnvbox5",
+                  "xtype" : "xcp_columnvbox",
+                  "orientation" : "Vertical",
+                  "width" : "37",
+                  "overflow_x" : "hidden",
+                  "labelWidth" : 150,
+                  "labelAlign" : "left",
+                  "halign" : "left",
+                  "valign" : "top",
+                  "defaultMargins" : "5",
+                  "items" : [ {
+                    "xcpId" : "warning_icon",
+                    "xtype" : "xcp_image",
+                    "imageSource" : "urn:xcpcomm:com.emc.xcp.artifact.resource.image:Artifacts/Resources/error_32.png",
+                    "width" : 32,
+                    "height" : 32,
+                    "navType" : "none"
+                  } ]
+                }, {
+                  "xcpId" : "columnvbox6",
+                  "xtype" : "xcp_columnvbox",
+                  "orientation" : "Vertical",
+                  "overflow_x" : "hidden",
+                  "labelWidth" : 150,
+                  "labelAlign" : "left",
+                  "halign" : "left",
+                  "valign" : "top",
+                  "defaultMargins" : "5",
+                  "items" : [ {
+                    "xcpId" : "information",
+                    "xtype" : "xcp_rich_text",
+                    "html" : "${_UI_Page_wa_page_not_found_information_html}",
+                    "hideErrorInToolTip" : false,
+                    "stopOnValidationFail" : true
+                  } ]
+                } ]
+              } ]
+            } ]
+          } ]
+        } ]
+      }, {
+        "xcpId" : "rich_text",
+        "xtype" : "xcp_rich_text",
+        "style" : "height:20px",
+        "hideErrorInToolTip" : false,
+        "stopOnValidationFail" : true
+      } ]
+    }, {
+      "xcpId" : "columnvbox2",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5"
+    } ]
+  } ]
+}

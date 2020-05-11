@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xcp_project" xmlns="http://identifiers.emc.com/vocab/xcp">
+  <properties>
+    <name>Workaround_Application</name>
+    <namespace>wa</namespace>
+    <label>Workaround Application</label>
+    <version>1.0.0</version>
+    <type>application</type>
+  </properties>
+  <links>
+    <link href="${contextPath}types/projects/xcp_project" rel="type"/>
+    <link href="${contextPath}application" rel="self"/>
+    <link href="${contextPath}application-configurations/xcp_application_configuration" rel="http://identifiers.emc.com/linkrel/application-configurations"/>
+    <link href="${contextPath}projects/xcp_project" rel="http://identifiers.emc.com/linkrel/projects"/>
+    <link href="${contextPath}roles/xcp_role" rel="http://identifiers.emc.com/linkrel/roles"/>
+  </links>
+</project>

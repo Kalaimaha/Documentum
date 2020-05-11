@@ -1,0 +1,108 @@
+{
+  "padding" : "10 10 5 10",
+  "border" : false,
+  "xtype" : "xcp_form",
+  "namespace" : "xcp",
+  "categoryID" : "com_emc_xcp_artifact_uistep",
+  "artifactName" : "signoff_usergroup",
+  "items" : [ {
+    "xtype" : "xcp_action_container",
+    "actions" : [ {
+      "xcpId" : "userorgroup_selecti_staless_ds_1",
+      "actionModel" : "xcp_userorgroup_selecti_staless_ds_outputs",
+      "inputModelName" : "xcp_userorgroup_selecti_staless_ds_inputs",
+      "actionType" : "datasource",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ {
+          "propertyId" : "processVariables.starts_with_filter",
+          "setterFunName" : "setInputProperty",
+          "etype" : "processVariables.starts_with_filter",
+          "events" : [ "text_input.change" ],
+          "disableInitialEval" : false
+        } ],
+        "mapping" : {
+          "processVariables.starts_with_filter" : ["text_input" ]
+        }
+      } ],
+      "autoLoad" : true
+    } ]
+  }, {
+    "xtype" : "xcp_uievent_publisher",
+    "plugins" : [ {
+      "ptype" : "xcp_publish_uievents",
+      "publish" : [ ]
+    } ]
+  }, {
+    "xcpId" : "signoff_password",
+    "xtype" : "xcp_text_input",
+    "fieldLabel" : "${_UI_UIStep_xcp_signoff_usergroup_signoff_password_fieldLabel}",
+    "hstretch" : true,
+    "inputType" : "password"
+  }, {
+    "xcpId" : "column_box",
+    "xtype" : "xcp_column_box",
+    "collapsible" : false,
+    "collapseFirst" : true,
+    "border" : false,
+    "defaultMargins" : "5",
+    "layout" : "xcp_columnbox",
+    "plugins" : [ {
+      "ptype" : "xcp_expression_properties",
+      "expression" : [ {
+        "propertyId" : "collapsed",
+        "setterFunName" : "setCollapsed",
+        "etype" : "column_box_collapsed",
+        "disableProcessingOnRender" : true
+      } ]
+    } ],
+    "items" : [ {
+      "xcpId" : "columnvbox",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5",
+      "items" : [ {
+        "xcpId" : "text_input",
+        "xtype" : "xcp_text_input",
+        "fieldLabel" : "${_UI_UIStep_xcp_signoff_usergroup_text_input_fieldLabel}",
+        "hstretch" : true,
+        "valueType" : "STRING"
+      } ]
+    }, {
+      "xcpId" : "columnvbox1",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5",
+      "items" : [ {
+        "xcpId" : "button",
+        "xtype" : "xcp_button",
+        "text" : "${_UI_UIStep_xcp_signoff_usergroup_button_text}",
+        "redirectStyle" : "none",
+        "autoLoad" : false,
+        "pageSize" : 10,
+        "outputType" : "Array",
+        "action" : {
+          "actionType" : "datasource"
+        }
+      } ]
+    } ]
+  }, {
+    "xcpId" : "username_dropdown_list",
+    "xtype" : "xcp_dropdown_list",
+    "fieldLabel" : "${_UI_UIStep_xcp_signoff_usergroup_username_dropdown_list_fieldLabel}",
+    "valueField" : "user_group_name",
+    "displayField" : "user_group_name",
+    "modelStore" : "dataservices.userorgroup_selecti_staless_ds_1",
+    "valueType" : "STRING"
+  } ]
+}

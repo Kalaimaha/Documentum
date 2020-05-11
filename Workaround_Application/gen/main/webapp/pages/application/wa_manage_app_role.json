@@ -1,0 +1,72 @@
+{
+  "cls" : "wa_manage_app_role",
+  "padding" : 0,
+  "border" : false,
+  "namespace" : "wa",
+  "categoryID" : "com_emc_xcp_artifact_page",
+  "artifactName" : "manage_app_role",
+  "pageTitle" : "${_UI_Page_wa_manage_app_role_title}",
+  "xtype" : "xcp_form",
+  "items" : [ {
+    "xtype" : "xcp_action_container",
+    "actions" : [ ]
+  }, {
+    "xtype" : "xcp_uievent_publisher",
+    "plugins" : [ {
+      "ptype" : "xcp_publish_uievents",
+      "publish" : [ ]
+    } ]
+  }, {
+    "xcpId" : "rich_text",
+    "xtype" : "xcp_rich_text",
+    "html" : "${_UI_Page_wa_manage_app_role_rich_text_html}",
+    "hideErrorInToolTip" : false,
+    "stopOnValidationFail" : true
+  }, {
+    "xcpId" : "results_list",
+    "xtype" : "xcp_results_list",
+    "typeName" : "role",
+    "modelName" : "roles",
+    "storeId" : "rolesStore",
+    "pageSize" : 10,
+    "selectionModel" : false,
+    "enableDragDrop" : true,
+    "disableNavigationOnFirstColumn" : false,
+    "allowDeselect" : false,
+    "displayTotalRowCount" : false,
+    "autoTotalCount" : true,
+    "autoSelection" : false,
+    "pageSizeList" : "10,25,50,100",
+    "stateful" : false,
+    "allowInLineEdit" : false,
+    "columns" : [ {
+      "xcpId" : "results_list_page_link_column",
+      "xtype" : "xcp_results_list_page_link_column",
+      "text" : "${_UI_Page_wa_manage_app_role_results_list_page_link_column_text}",
+      "width" : 150,
+      "isRepeating" : false,
+      "sortable" : false,
+      "menuDisabled" : true,
+      "dataIndex" : "name",
+      "hideable" : true,
+      "resizable" : true,
+      "draggable" : true,
+      "isExprImageSource" : false,
+      "navType" : "none"
+    }, {
+      "xcpId" : "results_list_column",
+      "xtype" : "xcp_results_list_column",
+      "text" : "${_UI_Page_wa_manage_app_role_results_list_column_text}",
+      "valueType" : "STRING",
+      "isRepeating" : false,
+      "sortable" : false,
+      "menuDisabled" : true,
+      "dataIndex" : "description",
+      "hideable" : true,
+      "resizable" : true,
+      "draggable" : true,
+      "isExprImageSource" : false,
+      "navType" : "none"
+    } ]
+  } ]
+}

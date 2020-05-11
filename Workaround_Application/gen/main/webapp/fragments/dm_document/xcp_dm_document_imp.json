@@ -1,0 +1,85 @@
+{
+  "cls" : "wa_dm_document_dm_document_imp",
+  "padding" : 0,
+  "border" : false,
+  "namespace" : "xcp",
+  "categoryID" : "com_emc_xcp_artifact_fragment",
+  "artifactName" : "dm_document_imp",
+  "xtype" : "xcp_form",
+  "models" : [ "dm_document" ],
+  "items" : [ {
+    "xtype" : "xcp_action_container",
+    "actions" : [ ]
+  }, {
+    "xtype" : "xcp_uievent_publisher",
+    "plugins" : [ {
+      "ptype" : "xcp_publish_uievents",
+      "publish" : [ ]
+    } ]
+  }, {
+    "xtype" : "xcp_fragment_input",
+    "plugins" : [ {
+      "ptype" : "xcp_expression_properties",
+      "expression" : [ ]
+    } ]
+  }, {
+    "xtype" : "xcp_fragment_output",
+    "plugins" : [ {
+      "ptype" : "xcp_expression_properties",
+      "expression" : [ {
+        "propertyId" : "model",
+        "setterFunName" : "setOutputValue",
+        "etype" : "model",
+        "events" : [ "dm_document.change", "dm_document.load" ],
+        "disableInitialEval" : false,
+        "disableProcessingOnRender" : false
+      }, {
+        "propertyId" : "model.object_name",
+        "setterFunName" : "setModelAttributeValue",
+        "etype" : "model.object_name",
+        "events" : [ "object_name.change" ],
+        "disableInitialEval" : false,
+        "disableProcessingOnRender" : false
+      }, {
+        "propertyId" : "model.a_content_type",
+        "setterFunName" : "setModelAttributeValue",
+        "etype" : "model.a_content_type",
+        "events" : [ "application.fragmentInputModifiedEvent.content_format" ],
+        "disableInitialEval" : false,
+        "disableProcessingOnRender" : false
+      } ]
+    } ]
+  }, {
+    "xcpId" : "columnvbox",
+    "xtype" : "xcp_columnvbox",
+    "orientation" : "Vertical",
+    "width" : "100%",
+    "split" : true,
+    "overflow_x" : "hidden",
+    "labelWidth" : 150,
+    "labelAlign" : "left",
+    "halign" : "left",
+    "valign" : "top",
+    "defaultMargins" : "5",
+    "items" : [ {
+      "xcpId" : "object_name",
+      "xtype" : "xcp_text_input",
+      "fieldLabel" : "${_UI_Page_xcp_dm_document_imp_object_name_fieldLabel}",
+      "hstretch" : true,
+      "valueType" : "STRING",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ {
+          "propertyId" : "value",
+          "setterFunName" : "setValue",
+          "eventsBasedEtype" : [ {
+            "etype" : "object_name_value_",
+            "events" : [ "application.fragmentInputModifiedEvent.object_name" ],
+            "disableInitialEval" : false
+          } ],
+          "disableProcessingOnRender" : false
+        } ]
+      } ]
+    } ]
+  } ]
+}

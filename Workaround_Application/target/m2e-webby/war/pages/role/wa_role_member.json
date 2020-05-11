@@ -1,0 +1,91 @@
+{
+  "cls" : "wa_role_member",
+  "padding" : 0,
+  "border" : false,
+  "namespace" : "wa",
+  "categoryID" : "com_emc_xcp_artifact_page",
+  "artifactName" : "role_member",
+  "pageTitle" : "${_UI_Page_wa_role_member_title}",
+  "xtype" : "xcp_form",
+  "items" : [ {
+    "xtype" : "xcp_action_container",
+    "actions" : [ ]
+  }, {
+    "xtype" : "xcp_uievent_publisher",
+    "plugins" : [ {
+      "ptype" : "xcp_publish_uievents",
+      "publish" : [ ]
+    } ]
+  }, {
+    "xcpId" : "breadcrumb",
+    "xtype" : "xcp_breadcrumb",
+    "text" : "${_UI_Page_wa_role_member_breadcrumb_text}",
+    "sub_text" : "${_UI_Page_wa_role_member_breadcrumb_sub_text}",
+    "xcp_nav_url" : "wa_manage_app_role",
+    "xcp_data_path" : "application/role/"
+  }, {
+    "xcpId" : "admin_results_list",
+    "xtype" : "xcp_admin_results_list",
+    "typeName" : "RoleMember",
+    "modelName" : "xcp.admin.model.RoleMember",
+    "pageSize" : 25,
+    "storeId" : "roleMembersStore",
+    "selectionModelName" : "xcp.admin.selection.CheckboxModel",
+    "columns" : [ {
+      "xcpId" : "results_list_column",
+      "xtype" : "xcp_results_list_column",
+      "text" : "${_UI_Page_wa_role_member_results_list_column_text}",
+      "width" : 150,
+      "valueType" : "STRING",
+      "isRepeating" : false,
+      "sortable" : false,
+      "menuDisabled" : true,
+      "dataIndex" : "name",
+      "hideable" : true,
+      "resizable" : true,
+      "draggable" : true,
+      "isExprImageSource" : false,
+      "navType" : "none"
+    }, {
+      "xcpId" : "results_list_email_link_column",
+      "xtype" : "xcp_results_list_email_link_column",
+      "text" : "${_UI_Page_wa_role_member_results_list_email_link_column_text}",
+      "dataIndex" : "email",
+      "hideable" : true,
+      "resizable" : true,
+      "draggable" : true,
+      "isExprImageSource" : false,
+      "navType" : "none"
+    }, {
+      "xcpId" : "results_list_column1",
+      "xtype" : "xcp_results_list_column",
+      "text" : "${_UI_Page_wa_role_member_results_list_column1_text}",
+      "width" : 150,
+      "valueType" : "xcp.picklist._xcpMemberTypes",
+      "isRepeating" : false,
+      "sortable" : false,
+      "menuDisabled" : true,
+      "dataIndex" : "type",
+      "hideable" : true,
+      "resizable" : true,
+      "draggable" : true,
+      "isExprImageSource" : false,
+      "navType" : "none"
+    }, {
+      "xcpId" : "results_list_column2",
+      "xtype" : "xcp_results_list_column",
+      "text" : "${_UI_Page_wa_role_member_results_list_column2_text}",
+      "width" : 150,
+      "valueType" : "STRING",
+      "isRepeating" : false,
+      "sortable" : false,
+      "menuDisabled" : true,
+      "dataIndex" : "description",
+      "hideable" : true,
+      "resizable" : true,
+      "draggable" : true,
+      "isExprImageSource" : false,
+      "navType" : "none"
+    } ]
+  } ]
+}

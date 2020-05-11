@@ -1,0 +1,274 @@
+{
+  "padding" : "10 10 5 10",
+  "border" : false,
+  "xtype" : "xcp_form",
+  "namespace" : "xcp",
+  "categoryID" : "com_emc_xcp_artifact_uistep",
+  "artifactName" : "default_create_docu",
+  "items" : [ {
+    "xtype" : "xcp_action_container",
+    "actions" : [ {
+      "xcpId" : "fetchtypes_initiate_staless_ds",
+      "actionModel" : "xcp_fetchtypes_initiate_staless_ds_outputs",
+      "inputModelName" : "xcp_fetchtypes_initiate_staless_ds_inputs",
+      "actionType" : "datasource",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ {
+          "propertyId" : "processVariables.inputs",
+          "setterFunName" : "setInputProperty",
+          "etype" : "processVariables.inputs"
+        }, {
+          "propertyId" : "processVariables.inputs_label",
+          "setterFunName" : "setInputProperty",
+          "etype" : "processVariables.inputs_label"
+        } ],
+        "mapping" : {
+        }
+      } ],
+      "autoLoad" : true
+    }, {
+      "xcpId" : "ds_collection_content_templates",
+      "actionModel" : "xcp_ds_collection_content_templates_outputs",
+      "inputModelName" : "xcp_ds_collection_content_templates_inputs",
+      "actionType" : "datasource",
+      "linkrel" : "http://identifiers.emc.com/linkrel/templates",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ {
+          "propertyId" : "a_content_type",
+          "setterFunName" : "setInputProperty",
+          "etype" : "a_content_type",
+          "events" : [ "content_format.change" ],
+          "disableInitialEval" : false
+        }, {
+          "propertyId" : "r_object_type",
+          "setterFunName" : "setInputProperty",
+          "etype" : "r_object_type",
+          "events" : [ "content_type.change" ],
+          "disableInitialEval" : false
+        } ],
+        "mapping" : {
+          "a_content_type" : ["content_format" ],
+          "r_object_type" : ["content_type" ]
+        }
+      } ],
+      "autoLoad" : true,
+      "invokerEvents" : [ {
+        "events" : ["content_format.change" ]
+      }, {
+        "events" : ["content_type.change" ]
+      } ]
+    }, {
+      "xcpId" : "ds_collection_templates_formats",
+      "actionModel" : "xcp_ds_collection_templates_formats_outputs",
+      "inputModelName" : "xcp_ds_collection_templates_formats_inputs",
+      "actionType" : "datasource",
+      "linkrel" : "http://identifiers.emc.com/linkrel/templates",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ ],
+        "mapping" : {
+        }
+      } ],
+      "autoLoad" : true
+    } ]
+  }, {
+    "xtype" : "xcp_uievent_publisher",
+    "plugins" : [ {
+      "ptype" : "xcp_publish_uievents",
+      "publish" : [ ]
+    } ]
+  }, {
+    "xcpId" : "column_box",
+    "xtype" : "xcp_column_box",
+    "collapsible" : false,
+    "collapseFirst" : true,
+    "border" : false,
+    "defaultMargins" : "5",
+    "layout" : "xcp_columnbox",
+    "plugins" : [ {
+      "ptype" : "xcp_expression_properties",
+      "expression" : [ {
+        "propertyId" : "collapsed",
+        "setterFunName" : "setCollapsed",
+        "etype" : "column_box_collapsed",
+        "disableProcessingOnRender" : true
+      } ]
+    } ],
+    "items" : [ {
+      "xcpId" : "columnvbox",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5",
+      "items" : [ {
+        "xcpId" : "content_type",
+        "xtype" : "xcp_dropdown_list",
+        "fieldLabel" : "${_UI_UIStep_xcp_default_create_docu_content_type_fieldLabel}",
+        "valueField" : "outputs",
+        "displayField" : "outputs_label",
+        "modelStore" : "dataservices.fetchtypes_initiate_staless_ds",
+        "valueType" : "STRING",
+        "plugins" : [ {
+          "ptype" : "xcp_expression_properties",
+          "expression" : [ {
+            "propertyId" : "value",
+            "setterFunName" : "setValue",
+            "eventsBasedEtype" : [ {
+              "etype" : "content_type_value_"
+            } ],
+            "disableProcessingOnRender" : false
+          } ]
+        } ]
+      }, {
+        "xcpId" : "content_format",
+        "xtype" : "xcp_dropdown_list",
+        "fieldLabel" : "${_UI_UIStep_xcp_default_create_docu_content_format_fieldLabel}",
+        "valueField" : "a_content_type",
+        "displayField" : "description",
+        "modelStore" : "dataservices.ds_collection_templates_formats",
+        "valueType" : "STRING",
+        "plugins" : [ {
+          "ptype" : "xcp_expression_properties",
+          "expression" : [ {
+            "propertyId" : "value",
+            "setterFunName" : "setValue",
+            "eventsBasedEtype" : [ {
+              "etype" : "content_format_value_"
+            } ],
+            "disableProcessingOnRender" : false
+          } ]
+        } ]
+      }, {
+        "xcpId" : "doc_template",
+        "xtype" : "xcp_dropdown_list",
+        "fieldLabel" : "${_UI_UIStep_xcp_default_create_docu_doc_template_fieldLabel}",
+        "valueField" : "id",
+        "displayField" : "object_name",
+        "modelStore" : "dataservices.ds_collection_content_templates",
+        "valueType" : "STRING",
+        "plugins" : [ {
+          "ptype" : "xcp_expression_properties",
+          "expression" : [ {
+            "propertyId" : "disabled",
+            "setterFunName" : "setDisabled",
+            "eventsBasedEtype" : [ {
+              "etype" : "doc_template_disabled_",
+              "events" : [ "content_type.change" ],
+              "disableInitialEval" : false
+            } ],
+            "disableProcessingOnRender" : false
+          } ]
+        } ]
+      }, {
+        "xcpId" : "selector",
+        "xtype" : "xcp_selector",
+        "fieldLabel" : "${_UI_UIStep_xcp_default_create_docu_selector_fieldLabel}",
+        "hstretch" : true,
+        "objectType" : "dm_folder",
+        "displayField" : "object_name",
+        "fromRepository" : true,
+        "fromFileSystem" : false,
+        "actionFlowId" : "xcp_selector_folder",
+        "modelRadio" : true,
+        "packageRadio" : false,
+        "modelUrn" : "urn:xcp:com.emc.xcp.artifact.folder:Artifacts/Folders/dm_folder.folder",
+        "packageModelOption" : "model",
+        "modelProp" : "urn:xcp:com.emc.xcp.artifact.folder:Artifacts/Folders/dm_folder.folder",
+        "plugins" : [ {
+          "ptype" : "xcp_expression_properties",
+          "expression" : [ {
+            "propertyId" : "mandatory",
+            "setterFunName" : "setMandatory",
+            "etype" : "selector_mandatory",
+            "events" : [ "application.xcp_action_flow_step_page_load" ],
+            "disableInitialEval" : true,
+            "disableProcessingOnRender" : false
+          }, {
+            "propertyId" : "value",
+            "setterFunName" : "setValue",
+            "etype" : "selector_value",
+            "disableProcessingOnRender" : false
+          } ]
+        } ]
+      }, {
+        "xcpId" : "fragment",
+        "xtype" : "xcp_fragment",
+        "fieldLabel" : "",
+        "cls" : "xcp-content-area",
+        "margin" : "10 10 10 10",
+        "plugins" : [ {
+          "ptype" : "xcp_expression_properties",
+          "expression" : [ {
+            "propertyId" : "fragmentExpression",
+            "setterFunName" : "setFragmentId",
+            "eventsBasedEtype" : [ {
+              "etype" : "fragment_fragmentExpression_",
+              "events" : [ "content_type.change" ],
+              "disableInitialEval" : false
+            } ],
+            "disableProcessingOnRender" : false
+          }, {
+            "propertyId" : "id",
+            "setterFunName" : "setObjectId",
+            "etype" : "id",
+            "events" : [ "doc_template.selectedchange" ],
+            "disableInitialEval" : false,
+            "disableProcessingOnRender" : false
+          } ]
+        } ]
+      } ]
+    }, {
+      "xcpId" : "columnvbox1",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5",
+      "items" : [ {
+        "xcpId" : "viewer",
+        "xtype" : "xcp_viewer",
+        "docName" : false,
+        "height" : 550,
+        "prn" : false,
+        "thm" : false,
+        "ann" : false,
+        "man" : false,
+        "mdc" : false,
+        "hstretch" : true,
+        "disableFocusOnLoad" : true,
+        "plugins" : [ {
+          "ptype" : "xcp_expression_properties",
+          "expression" : [ {
+            "propertyId" : "objectId",
+            "setterFunName" : "setObjectId",
+            "eventsBasedEtype" : [ {
+              "etype" : "viewer_objectId_",
+              "events" : [ "doc_template.selectedchange" ],
+              "disableInitialEval" : false
+            } ],
+            "disableProcessingOnRender" : false
+          }, {
+            "propertyId" : "contentType",
+            "setterFunName" : "setContentType",
+            "eventsBasedEtype" : [ {
+              "etype" : "viewer_contentType_",
+              "events" : [ "fragment.change" ],
+              "disableInitialEval" : false
+            } ],
+            "disableProcessingOnRender" : false
+          } ]
+        } ]
+      } ]
+    } ]
+  } ],
+  "childModelsToLoad" : [ "xcp_actionflow.Inputs" ]
+}

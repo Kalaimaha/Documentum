@@ -1,0 +1,177 @@
+{
+  "padding" : "10 10 5 10",
+  "border" : false,
+  "xtype" : "xcp_form",
+  "namespace" : "xcp",
+  "categoryID" : "com_emc_xcp_artifact_uistep",
+  "artifactName" : "def_inv_af_step_1",
+  "items" : [ {
+    "xtype" : "xcp_action_container",
+    "actions" : [ ]
+  }, {
+    "xtype" : "xcp_uievent_publisher",
+    "plugins" : [ {
+      "ptype" : "xcp_publish_uievents",
+      "publish" : [ ]
+    } ]
+  }, {
+    "xcpId" : "column_box",
+    "xtype" : "xcp_column_box",
+    "collapsible" : false,
+    "collapseFirst" : true,
+    "border" : false,
+    "defaultMargins" : "5",
+    "layout" : "xcp_columnbox",
+    "plugins" : [ {
+      "ptype" : "xcp_expression_properties",
+      "expression" : [ {
+        "propertyId" : "collapsed",
+        "setterFunName" : "setCollapsed",
+        "etype" : "column_box_collapsed",
+        "disableProcessingOnRender" : true
+      } ]
+    } ],
+    "items" : [ {
+      "xcpId" : "columnvbox",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "width" : "25%",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5",
+      "items" : [ {
+        "xcpId" : "fileselector",
+        "xtype" : "xcp_fileselector",
+        "fieldLabel" : "${_UI_UIStep_xcp_def_inv_af_step_1_fileselector_fieldLabel}",
+        "height" : 300,
+        "minWidth" : 150,
+        "minHeight" : 200,
+        "plugins" : [ {
+          "ptype" : "xcp_expression_properties",
+          "expression" : [ {
+            "propertyId" : "uploadURL",
+            "setterFunName" : "setFileUploadURL",
+            "etype" : "fileselector_uploadURL",
+            "disableProcessingOnRender" : false
+          }, {
+            "propertyId" : "fileIDs",
+            "setterFunName" : "setFileIDs",
+            "eventsBasedEtype" : [ {
+              "etype" : "fileselector_fileIDs_",
+              "events" : [ "application.xcp_file_uploaded_list" ],
+              "disableInitialEval" : true
+            } ],
+            "disableProcessingOnRender" : false
+          }, {
+            "propertyId" : "checkinObjectIds",
+            "setterFunName" : "setCheckinObjectIds",
+            "eventsBasedEtype" : [ {
+              "etype" : "fileselector_checkinObjectIds_"
+            } ],
+            "disableProcessingOnRender" : false
+          }, {
+            "propertyId" : "checkinObjectNames",
+            "setterFunName" : "setCheckinObjectNames",
+            "eventsBasedEtype" : [ {
+              "etype" : "fileselector_checkinObjectNames_"
+            } ],
+            "disableProcessingOnRender" : false
+          }, {
+            "propertyId" : "checkinObjectTypes",
+            "setterFunName" : "setCheckinObjectTypes",
+            "eventsBasedEtype" : [ {
+              "etype" : "fileselector_checkinObjectTypes_"
+            } ],
+            "disableProcessingOnRender" : false
+          } ]
+        } ]
+      } ]
+    }, {
+      "xcpId" : "columnvbox1",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5",
+      "items" : [ {
+        "xcpId" : "card_container",
+        "xtype" : "xcp_card_container",
+        "fieldLabel" : "Card Container",
+        "plugins" : [ {
+          "ptype" : "xcp_expression_properties",
+          "expression" : [ {
+            "propertyId" : "removeChild",
+            "setterFunName" : "setRemoveChild",
+            "etype" : "card_container_removeChild",
+            "events" : [ "fileselector.removeFile" ],
+            "disableInitialEval" : false,
+            "disableProcessingOnRender" : false
+          }, {
+            "propertyId" : "selectChild",
+            "setterFunName" : "setSelectChild",
+            "etype" : "card_container_selectChild",
+            "events" : [ "fileselector.select" ],
+            "disableInitialEval" : false,
+            "disableProcessingOnRender" : false
+          } ]
+        } ],
+        "items" : [ {
+          "xcpId" : "version",
+          "xtype" : "xcp_dropdown_list",
+          "fieldLabel" : "${_UI_UIStep_xcp_def_inv_af_step_1_version_fieldLabel}",
+          "modelStore" : "picklists.xcp.xcp_versionList",
+          "valueType" : "INTEGER"
+        }, {
+          "xcpId" : "version_label",
+          "xtype" : "xcp_text_input",
+          "fieldLabel" : "${_UI_UIStep_xcp_def_inv_af_step_1_version_label_fieldLabel}",
+          "hstretch" : true,
+          "valueType" : "STRING"
+        }, {
+          "xcpId" : "retain_lock",
+          "xtype" : "xcp_checkbox",
+          "fieldLabel" : "${_UI_UIStep_xcp_def_inv_af_step_1_retain_lock_fieldLabel}",
+          "valueType" : "BOOLEAN"
+        }, {
+          "xcpId" : "is_current",
+          "xtype" : "xcp_checkbox",
+          "fieldLabel" : "${_UI_UIStep_xcp_def_inv_af_step_1_is_current_fieldLabel}",
+          "valueType" : "BOOLEAN"
+        }, {
+          "xcpId" : "fragment",
+          "xtype" : "xcp_fragment",
+          "fieldLabel" : "",
+          "cls" : "xcp-content-area",
+          "margin" : "10 10 10 10",
+          "plugins" : [ {
+            "ptype" : "xcp_expression_properties",
+            "expression" : [ {
+              "propertyId" : "fragmentExpression",
+              "setterFunName" : "setFragmentId",
+              "eventsBasedEtype" : [ {
+                "etype" : "fragment_fragmentExpression_",
+                "events" : [ "fileselector.select" ],
+                "disableInitialEval" : false
+              } ],
+              "disableProcessingOnRender" : false
+            }, {
+              "propertyId" : "id",
+              "setterFunName" : "setObjectId",
+              "etype" : "id",
+              "events" : [ "fileselector.select" ],
+              "disableInitialEval" : false,
+              "disableProcessingOnRender" : false
+            } ]
+          } ]
+        } ]
+      } ]
+    } ]
+  } ],
+  "childModelsToLoad" : [ "xcp_actionflow.Inputs" ]
+}

@@ -1,0 +1,189 @@
+{
+  "cls" : "wa_landing_page",
+  "padding" : 0,
+  "border" : false,
+  "namespace" : "xcp",
+  "categoryID" : "com_emc_xcp_artifact_page",
+  "artifactName" : "landing_page",
+  "pageTitle" : "${_UI_Page_xcp_landing_page_title}",
+  "xtype" : "xcp_form",
+  "items" : [ {
+    "xtype" : "xcp_action_container",
+    "actions" : [ ]
+  }, {
+    "xtype" : "xcp_uievent_publisher",
+    "plugins" : [ {
+      "ptype" : "xcp_publish_uievents",
+      "publish" : [ ]
+    } ]
+  }, {
+    "xcpId" : "column_box",
+    "xtype" : "xcp_column_box",
+    "collapsible" : false,
+    "collapseFirst" : true,
+    "border" : false,
+    "defaultMargins" : "5",
+    "layout" : "xcp_columnbox",
+    "plugins" : [ {
+      "ptype" : "xcp_expression_properties",
+      "expression" : [ {
+        "propertyId" : "collapsed",
+        "setterFunName" : "setCollapsed",
+        "etype" : "column_box_collapsed",
+        "disableProcessingOnRender" : true
+      } ]
+    } ],
+    "items" : [ {
+      "xcpId" : "columnvbox",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5"
+    }, {
+      "xcpId" : "columnvbox1",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "width" : "500",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "50 0 5 5",
+      "items" : [ {
+        "xcpId" : "column_box1",
+        "xtype" : "xcp_column_box",
+        "collapsible" : false,
+        "collapseFirst" : true,
+        "border" : false,
+        "defaultMargins" : "5",
+        "layout" : "xcp_columnbox",
+        "cls" : "x-window-default",
+        "plugins" : [ {
+          "ptype" : "xcp_expression_properties",
+          "expression" : [ {
+            "propertyId" : "collapsed",
+            "setterFunName" : "setCollapsed",
+            "etype" : "column_box1_collapsed",
+            "disableProcessingOnRender" : true
+          } ]
+        } ],
+        "items" : [ {
+          "xcpId" : "columnvbox3",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "column_box2",
+            "xtype" : "xcp_column_box",
+            "collapsible" : false,
+            "collapseFirst" : true,
+            "border" : false,
+            "defaultMargins" : "5",
+            "layout" : "xcp_columnbox",
+            "plugins" : [ {
+              "ptype" : "xcp_expression_properties",
+              "expression" : [ {
+                "propertyId" : "collapsed",
+                "setterFunName" : "setCollapsed",
+                "etype" : "column_box2_collapsed",
+                "disableProcessingOnRender" : true
+              } ]
+            } ],
+            "items" : [ {
+              "xcpId" : "columnvbox4",
+              "xtype" : "xcp_columnvbox",
+              "orientation" : "Vertical",
+              "overflow_x" : "hidden",
+              "labelWidth" : 150,
+              "labelAlign" : "left",
+              "halign" : "left",
+              "valign" : "top",
+              "defaultMargins" : "5",
+              "items" : [ {
+                "xcpId" : "header",
+                "xtype" : "xcp_rich_text",
+                "html" : "${_UI_Page_xcp_landing_page_header_html}"
+              }, {
+                "xcpId" : "column_box3",
+                "xtype" : "xcp_column_box",
+                "collapsible" : false,
+                "collapseFirst" : true,
+                "border" : false,
+                "defaultMargins" : "5",
+                "layout" : "xcp_columnbox",
+                "plugins" : [ {
+                  "ptype" : "xcp_expression_properties",
+                  "expression" : [ {
+                    "propertyId" : "collapsed",
+                    "setterFunName" : "setCollapsed",
+                    "etype" : "column_box3_collapsed",
+                    "disableProcessingOnRender" : true
+                  } ]
+                } ],
+                "items" : [ {
+                  "xcpId" : "columnvbox5",
+                  "xtype" : "xcp_columnvbox",
+                  "orientation" : "Vertical",
+                  "width" : "37",
+                  "overflow_x" : "hidden",
+                  "labelWidth" : 150,
+                  "labelAlign" : "left",
+                  "halign" : "left",
+                  "valign" : "top",
+                  "defaultMargins" : "5",
+                  "items" : [ {
+                    "xcpId" : "warning_icon",
+                    "xtype" : "xcp_image",
+                    "imageSource" : "urn:xcpcomm:com.emc.xcp.artifact.resource.image:Artifacts/Resources/error_32.png",
+                    "width" : 32,
+                    "height" : 32,
+                    "navType" : "none"
+                  } ]
+                }, {
+                  "xcpId" : "columnvbox6",
+                  "xtype" : "xcp_columnvbox",
+                  "orientation" : "Vertical",
+                  "overflow_x" : "hidden",
+                  "labelWidth" : 150,
+                  "labelAlign" : "left",
+                  "halign" : "left",
+                  "valign" : "top",
+                  "defaultMargins" : "5",
+                  "items" : [ {
+                    "xcpId" : "information",
+                    "xtype" : "xcp_rich_text",
+                    "html" : "${_UI_Page_xcp_landing_page_information_html}"
+                  } ]
+                } ]
+              } ]
+            } ]
+          } ]
+        } ]
+      }, {
+        "xcpId" : "rich_text",
+        "xtype" : "xcp_rich_text",
+        "style" : "height:20px"
+      } ]
+    }, {
+      "xcpId" : "columnvbox2",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5"
+    } ]
+  } ]
+}

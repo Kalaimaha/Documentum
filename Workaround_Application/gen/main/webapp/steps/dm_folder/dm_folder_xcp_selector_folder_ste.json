@@ -1,0 +1,256 @@
+{
+  "padding" : "10 10 5 10",
+  "border" : false,
+  "xtype" : "xcp_form",
+  "namespace" : "xcp",
+  "categoryID" : "com_emc_xcp_artifact_uistep",
+  "artifactName" : "selector_folder_ste",
+  "items" : [ {
+    "xtype" : "xcp_action_container",
+    "actions" : [ {
+      "xcpId" : "folder_rt_query_1",
+      "actionModel" : "xcp_folder_rt_query_outputs",
+      "inputModelName" : "xcp_folder_rt_query_inputs",
+      "actionType" : "datasource",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ {
+          "propertyId" : "input_folder_id",
+          "setterFunName" : "setInputProperty",
+          "etype" : "input_folder_id",
+          "events" : [ "text_input.change" ],
+          "disableInitialEval" : false
+        }, {
+          "propertyId" : "input_a_is_hidden",
+          "setterFunName" : "setInputProperty",
+          "etype" : "input_a_is_hidden"
+        } ],
+        "mapping" : {
+          "input_folder_id" : ["text_input" ]
+        }
+      } ],
+      "autoLoad" : true,
+      "pageSize" : 10
+    } ]
+  }, {
+    "xtype" : "xcp_uievent_publisher",
+    "plugins" : [ {
+      "ptype" : "xcp_publish_uievents",
+      "publish" : [ ]
+    } ]
+  }, {
+    "xcpId" : "column_box",
+    "xtype" : "xcp_column_box",
+    "collapsible" : false,
+    "collapseFirst" : true,
+    "border" : false,
+    "defaultMargins" : "5",
+    "layout" : "xcp_columnbox",
+    "plugins" : [ {
+      "ptype" : "xcp_expression_properties",
+      "expression" : [ {
+        "propertyId" : "collapsed",
+        "setterFunName" : "setCollapsed",
+        "etype" : "column_box_collapsed",
+        "disableProcessingOnRender" : true
+      } ]
+    } ],
+    "items" : [ {
+      "xcpId" : "columnvbox",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "width" : "100%",
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5",
+      "items" : [ {
+        "xcpId" : "column_box1",
+        "xtype" : "xcp_column_box",
+        "collapsible" : false,
+        "collapseFirst" : true,
+        "border" : false,
+        "defaultMargins" : "5",
+        "layout" : "xcp_columnbox",
+        "plugins" : [ {
+          "ptype" : "xcp_expression_properties",
+          "expression" : [ {
+            "propertyId" : "collapsed",
+            "setterFunName" : "setCollapsed",
+            "etype" : "column_box1_collapsed",
+            "disableProcessingOnRender" : true
+          } ]
+        } ],
+        "items" : [ {
+          "xcpId" : "columnvbox1",
+          "xtype" : "xcp_columnvbox",
+          "orientation" : "Vertical",
+          "width" : "100%",
+          "overflow_x" : "hidden",
+          "labelWidth" : 150,
+          "labelAlign" : "left",
+          "halign" : "left",
+          "valign" : "top",
+          "defaultMargins" : "5",
+          "items" : [ {
+            "xcpId" : "text_input",
+            "xtype" : "xcp_text_input",
+            "fieldLabel" : "${_UI_UIStep_xcp_selector_folder_ste_text_input_fieldLabel}",
+            "hstretch" : true,
+            "valueType" : "STRING"
+          } ]
+        } ]
+      }, {
+        "xcpId" : "column_box2",
+        "xtype" : "xcp_column_box",
+        "collapsible" : false,
+        "collapseFirst" : true,
+        "border" : false,
+        "defaultMargins" : "5",
+        "layout" : "xcp_columnbox",
+        "plugins" : [ {
+          "ptype" : "xcp_expression_properties",
+          "expression" : [ {
+            "propertyId" : "collapsed",
+            "setterFunName" : "setCollapsed",
+            "etype" : "column_box2_collapsed",
+            "disableProcessingOnRender" : true
+          } ]
+        } ],
+        "items" : [ {
+          "xcpId" : "columnhbox",
+          "xtype" : "xcp_columnhbox",
+          "orientation" : "Horizontal",
+          "width" : "100%",
+          "overflow_x" : "hidden",
+          "labelWidth" : 50,
+          "defaultMargins" : "5",
+          "labelAlign" : "left",
+          "halign" : "right",
+          "valign" : "top",
+          "items" : [ {
+            "xcpId" : "button",
+            "xtype" : "xcp_button",
+            "text" : "${_UI_UIStep_xcp_selector_folder_ste_button_text}",
+            "actionInstanceId" : "folder_rt_query_1",
+            "redirectStyle" : "current",
+            "autoLoad" : true,
+            "pageSize" : 10,
+            "outputType" : "Array"
+          } ]
+        } ]
+      } ]
+    } ]
+  }, {
+    "xcpId" : "results_list",
+    "xtype" : "xcp_results_list",
+    "typeName" : "dm_folder",
+    "modelName" : "xcp_folder_rt_query_outputs",
+    "pageSize" : 10,
+    "selectionModel" : false,
+    "modelStore" : "dataservices.folder_rt_query_1",
+    "columns" : [ {
+      "xcpId" : "folder_list_lock_column",
+      "xtype" : "xcp_folder_list_lock_column",
+      "text" : "${_UI_UIStep_xcp_selector_folder_ste_folder_list_lock_column_text}",
+      "width" : 32,
+      "valueType" : "STRING",
+      "isRepeating" : false,
+      "sortable" : false,
+      "menuDisabled" : true,
+      "dataIndex" : "r_lock_owner",
+      "parentxcpId" : "results_list"
+    }, {
+      "xcpId" : "results_list_page_link_column",
+      "xtype" : "xcp_results_list_page_link_column",
+      "text" : "${_UI_UIStep_xcp_selector_folder_ste_results_list_page_link_column_text}",
+      "width" : 150,
+      "valueType" : "STRING",
+      "isRepeating" : false,
+      "sortable" : false,
+      "menuDisabled" : true,
+      "dataIndex" : "object_name",
+      "parentxcpId" : "results_list"
+    }, {
+      "xcpId" : "results_list_column",
+      "xtype" : "xcp_results_list_column",
+      "text" : "${_UI_UIStep_xcp_selector_folder_ste_results_list_column_text}",
+      "width" : 150,
+      "valueType" : "STRING",
+      "isRepeating" : false,
+      "sortable" : false,
+      "menuDisabled" : true,
+      "dataIndex" : "r_creator_name",
+      "parentxcpId" : "results_list"
+    }, {
+      "xcpId" : "results_list_column1",
+      "xtype" : "xcp_results_list_column",
+      "text" : "${_UI_UIStep_xcp_selector_folder_ste_results_list_column1_text}",
+      "width" : 150,
+      "valueType" : "DATETIME",
+      "isRepeating" : false,
+      "format" : {
+        "xtype" : "xcp_datetime_formatter",
+        "dateFormat" : "short",
+        "timeFormat" : "short",
+        "dateStyle" : "datetime"
+      },
+      "sortable" : false,
+      "menuDisabled" : true,
+      "dataIndex" : "r_creation_date",
+      "parentxcpId" : "results_list"
+    }, {
+      "xcpId" : "results_list_column2",
+      "xtype" : "xcp_results_list_column",
+      "text" : "${_UI_UIStep_xcp_selector_folder_ste_results_list_column2_text}",
+      "width" : 150,
+      "valueType" : "STRING",
+      "isRepeating" : false,
+      "sortable" : false,
+      "menuDisabled" : true,
+      "dataIndex" : "r_modifier",
+      "parentxcpId" : "results_list"
+    }, {
+      "xcpId" : "results_list_column3",
+      "xtype" : "xcp_results_list_column",
+      "text" : "${_UI_UIStep_xcp_selector_folder_ste_results_list_column3_text}",
+      "width" : 150,
+      "valueType" : "DATETIME",
+      "isRepeating" : false,
+      "format" : {
+        "xtype" : "xcp_datetime_formatter",
+        "dateFormat" : "short",
+        "timeFormat" : "short",
+        "dateStyle" : "datetime"
+      },
+      "sortable" : false,
+      "menuDisabled" : true,
+      "dataIndex" : "r_modify_date",
+      "parentxcpId" : "results_list"
+    }, {
+      "xcpId" : "results_list_column4",
+      "xtype" : "xcp_results_list_column",
+      "text" : "${_UI_UIStep_xcp_selector_folder_ste_results_list_column4_text}",
+      "width" : 150,
+      "valueType" : "STRING",
+      "isRepeating" : false,
+      "sortable" : false,
+      "menuDisabled" : true,
+      "dataIndex" : "r_object_type",
+      "parentxcpId" : "results_list"
+    }, {
+      "xcpId" : "results_list_column5",
+      "xtype" : "xcp_results_list_column",
+      "text" : "${_UI_UIStep_xcp_selector_folder_ste_results_list_column5_text}",
+      "width" : 150,
+      "valueType" : "STRING",
+      "isRepeating" : false,
+      "sortable" : false,
+      "menuDisabled" : true,
+      "dataIndex" : "id",
+      "parentxcpId" : "results_list"
+    } ]
+  } ]
+}

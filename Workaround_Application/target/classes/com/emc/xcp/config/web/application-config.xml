@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<beans xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd" xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <bean class="com.emc.xcp.ui.services.config.ApplicationConfiguration" id="applicationConfiguration">
+        <property name="models">
+            <set>
+                <bean class="com.emc.xcp.ui.services.config.Model">
+                    <property name="name" value="role"/>
+                    <property name="homePageUrlName" value="wa_role_member"/>
+                    <property name="supportMasterPage" value="false"/>
+                    <property name="pages">
+                        <set>
+                            <bean class="com.emc.xcp.ui.services.config.Page">
+                                <property name="urlName" value="wa_role_member"/>
+                                <property name="defaultFileName" value="wa_role_member"/>
+                            </bean>
+                        </set>
+                    </property>
+                </bean>
+                <bean class="com.emc.xcp.ui.services.config.Model">
+                    <property name="name" value="application"/>
+                    <property name="homePageUrlName" value="xcp_user_preferences"/>
+                    <property name="supportMasterPage" value="true"/>
+                    <property name="pages">
+                        <set>
+                            <bean class="com.emc.xcp.ui.services.config.Page">
+                                <property name="urlName" value="signin"/>
+                                <property name="defaultFileName" value="application_signin"/>
+                            </bean>
+                            <bean class="com.emc.xcp.ui.services.config.Page">
+                                <property name="urlName" value="master"/>
+                                <property name="defaultFileName" value="wa_application_master"/>
+                            </bean>
+                            <bean class="com.emc.xcp.ui.services.config.Page">
+                                <property name="urlName" value="wa_page_not_found"/>
+                                <property name="defaultFileName" value="wa_page_not_found"/>
+                            </bean>
+                            <bean class="com.emc.xcp.ui.services.config.Page">
+                                <property name="urlName" value="wa_manage_app_role"/>
+                                <property name="defaultFileName" value="wa_manage_app_role"/>
+                            </bean>
+                            <bean class="com.emc.xcp.ui.services.config.Page">
+                                <property name="urlName" value="xcp_landing_page"/>
+                                <property name="defaultFileName" value="xcp_landing_page"/>
+                            </bean>
+                            <bean class="com.emc.xcp.ui.services.config.Page">
+                                <property name="urlName" value="xcp_user_preferences"/>
+                                <property name="defaultFileName" value="xcp_user_preferences"/>
+                            </bean>
+                            <bean class="com.emc.xcp.ui.services.config.Page">
+                                <property name="urlName" value="wa_application_parameter"/>
+                                <property name="defaultFileName" value="wa_application_parameter"/>
+                            </bean>
+                        </set>
+                    </property>
+                    <property name="steps">
+                        <set>
+                            <bean class="com.emc.xcp.ui.services.config.Step">
+                                <property name="urlName" value="xcp_signoff_usergroup"/>
+                                <property name="defaultFileName" value="xcp_signoff_usergroup"/>
+                            </bean>
+                            <bean class="com.emc.xcp.ui.services.config.Step">
+                                <property name="urlName" value="xcp_reject_activity"/>
+                                <property name="defaultFileName" value="xcp_reject_activity"/>
+                            </bean>
+                            <bean class="com.emc.xcp.ui.services.config.Step">
+                                <property name="urlName" value="xcp_signoff_usergroup_multi"/>
+                                <property name="defaultFileName" value="xcp_signoff_usergroup_multi"/>
+                            </bean>
+                            <bean class="com.emc.xcp.ui.services.config.Step">
+                                <property name="urlName" value="xcp_signoff_reject_one"/>
+                                <property name="defaultFileName" value="xcp_signoff_reject_one"/>
+                            </bean>
+                            <bean class="com.emc.xcp.ui.services.config.Step">
+                                <property name="urlName" value="xcp_forward_activity_multi"/>
+                                <property name="defaultFileName" value="xcp_forward_activity_multi"/>
+                            </bean>
+                            <bean class="com.emc.xcp.ui.services.config.Step">
+                                <property name="urlName" value="xcp_forward_activity"/>
+                                <property name="defaultFileName" value="xcp_forward_activity"/>
+                            </bean>
+                            <bean class="com.emc.xcp.ui.services.config.Step">
+                                <property name="urlName" value="xcp_user_from_queue"/>
+                                <property name="defaultFileName" value="xcp_user_from_queue"/>
+                            </bean>
+                            <bean class="com.emc.xcp.ui.services.config.Step">
+                                <property name="urlName" value="xcp_task_signoff"/>
+                                <property name="defaultFileName" value="xcp_task_signoff"/>
+                            </bean>
+                            <bean class="com.emc.xcp.ui.services.config.Step">
+                                <property name="urlName" value="xcp_def_imp_af_step_1"/>
+                                <property name="defaultFileName" value="xcp_def_imp_af_step_1"/>
+                            </bean>
+                            <bean class="com.emc.xcp.ui.services.config.Step">
+                                <property name="urlName" value="xcp_signoff_forward_multi"/>
+                                <property name="defaultFileName" value="xcp_signoff_forward_multi"/>
+                            </bean>
+                            <bean class="com.emc.xcp.ui.services.config.Step">
+                                <property name="urlName" value="xcp_def_lw_imp_af_step_1"/>
+                                <property name="defaultFileName" value="xcp_def_lw_imp_af_step_1"/>
+                            </bean>
+                            <bean class="com.emc.xcp.ui.services.config.Step">
+                                <property name="urlName" value="xcp_signoff_reject_multi"/>
+                                <property name="defaultFileName" value="xcp_signoff_reject_multi"/>
+                            </bean>
+                            <bean class="com.emc.xcp.ui.services.config.Step">
+                                <property name="urlName" value="xcp_usergroup_selection_multi"/>
+                                <property name="defaultFileName" value="xcp_usergroup_selection_multi"/>
+                            </bean>
+                            <bean class="com.emc.xcp.ui.services.config.Step">
+                                <property name="urlName" value="xcp_default_create_docu"/>
+                                <property name="defaultFileName" value="xcp_default_create_docu"/>
+                            </bean>
+                            <bean class="com.emc.xcp.ui.services.config.Step">
+                                <property name="urlName" value="xcp_queue_selection"/>
+                                <property name="defaultFileName" value="xcp_queue_selection"/>
+                            </bean>
+                            <bean class="com.emc.xcp.ui.services.config.Step">
+                                <property name="urlName" value="xcp_hold_task"/>
+                                <property name="defaultFileName" value="xcp_hold_task"/>
+                            </bean>
+                            <bean class="com.emc.xcp.ui.services.config.Step">
+                                <property name="urlName" value="xcp_def_create_folder_af_"/>
+                                <property name="defaultFileName" value="xcp_def_create_folder_af_"/>
+                            </bean>
+                            <bean class="com.emc.xcp.ui.services.config.Step">
+                                <property name="urlName" value="xcp_usergroup_selection"/>
+                                <property name="defaultFileName" value="xcp_usergroup_selection"/>
+                            </bean>
+                            <bean class="com.emc.xcp.ui.services.config.Step">
+                                <property name="urlName" value="xcp_signoff_forward_one"/>
+                                <property name="defaultFileName" value="xcp_signoff_forward_one"/>
+                            </bean>
+                            <bean class="com.emc.xcp.ui.services.config.Step">
+                                <property name="urlName" value="xcp_def_inv_af_step_1"/>
+                                <property name="defaultFileName" value="xcp_def_inv_af_step_1"/>
+                            </bean>
+                            <bean class="com.emc.xcp.ui.services.config.Step">
+                                <property name="urlName" value="xcp_reject_activity_multi"/>
+                                <property name="defaultFileName" value="xcp_reject_activity_multi"/>
+                            </bean>
+                        </set>
+                    </property>
+                    <property name="fragments">
+                        <set>
+                            <bean class="com.emc.xcp.ui.services.config.Fragment">
+                                <property name="urlName" value="xcp_user_preferences_fr"/>
+                                <property name="defaultFileName" value="xcp_user_preferences_fr"/>
+                            </bean>
+                        </set>
+                    </property>
+                </bean>
+                <bean class="com.emc.xcp.ui.services.config.Model">
+                    <property name="name" value="dm_cabinet"/>
+                    <property name="homePageUrlName" value="xcp_edit_base_cabinet"/>
+                    <property name="supportMasterPage" value="false"/>
+                    <property name="pages">
+                        <set>
+                            <bean class="com.emc.xcp.ui.services.config.Page">
+                                <property name="urlName" value="xcp_edit_base_cabinet"/>
+                                <property name="defaultFileName" value="xcp_edit_base_cabinet"/>
+                            </bean>
+                            <bean class="com.emc.xcp.ui.services.config.Page">
+                                <property name="urlName" value="xcp_view_base_cabinet"/>
+                                <property name="defaultFileName" value="xcp_view_base_cabinet"/>
+                            </bean>
+                        </set>
+                    </property>
+                </bean>
+                <bean class="com.emc.xcp.ui.services.config.Model">
+                    <property name="name" value="dm_document"/>
+                    <property name="homePageUrlName" value="xcp_view_base_content"/>
+                    <property name="supportMasterPage" value="false"/>
+                    <property name="pages">
+                        <set>
+                            <bean class="com.emc.xcp.ui.services.config.Page">
+                                <property name="urlName" value="xcp_edit_base_content"/>
+                                <property name="defaultFileName" value="xcp_edit_base_content"/>
+                            </bean>
+                            <bean class="com.emc.xcp.ui.services.config.Page">
+                                <property name="urlName" value="xcp_view_base_content"/>
+                                <property name="defaultFileName" value="xcp_view_base_content"/>
+                            </bean>
+                        </set>
+                    </property>
+                    <property name="steps">
+                        <set>
+                            <bean class="com.emc.xcp.ui.services.config.Step">
+                                <property name="urlName" value="dm_document_xcp_selector_content_st"/>
+                                <property name="defaultFileName" value="dm_document_xcp_selector_content_st"/>
+                            </bean>
+                            <bean class="com.emc.xcp.ui.services.config.Step">
+                                <property name="urlName" value="dm_document_xcp_attachment_step"/>
+                                <property name="defaultFileName" value="dm_document_xcp_attachment_step"/>
+                            </bean>
+                        </set>
+                    </property>
+                    <property name="fragments">
+                        <set>
+                            <bean class="com.emc.xcp.ui.services.config.Fragment">
+                                <property name="urlName" value="xcp_dm_document_imp"/>
+                                <property name="defaultFileName" value="xcp_dm_document_imp"/>
+                            </bean>
+                            <bean class="com.emc.xcp.ui.services.config.Fragment">
+                                <property name="urlName" value="xcp_dm_document_chk"/>
+                                <property name="defaultFileName" value="xcp_dm_document_chk"/>
+                            </bean>
+                        </set>
+                    </property>
+                </bean>
+                <bean class="com.emc.xcp.ui.services.config.Model">
+                    <property name="name" value="dm_folder"/>
+                    <property name="homePageUrlName" value="xcp_view_base_folder"/>
+                    <property name="supportMasterPage" value="false"/>
+                    <property name="pages">
+                        <set>
+                            <bean class="com.emc.xcp.ui.services.config.Page">
+                                <property name="urlName" value="xcp_edit_base_folder"/>
+                                <property name="defaultFileName" value="xcp_edit_base_folder"/>
+                            </bean>
+                            <bean class="com.emc.xcp.ui.services.config.Page">
+                                <property name="urlName" value="xcp_view_base_folder"/>
+                                <property name="defaultFileName" value="xcp_view_base_folder"/>
+                            </bean>
+                        </set>
+                    </property>
+                    <property name="steps">
+                        <set>
+                            <bean class="com.emc.xcp.ui.services.config.Step">
+                                <property name="urlName" value="dm_folder_xcp_selector_folder_ste"/>
+                                <property name="defaultFileName" value="dm_folder_xcp_selector_folder_ste"/>
+                            </bean>
+                        </set>
+                    </property>
+                    <property name="fragments">
+                        <set>
+                            <bean class="com.emc.xcp.ui.services.config.Fragment">
+                                <property name="urlName" value="xcp_dm_folder_create"/>
+                                <property name="defaultFileName" value="xcp_dm_folder_create"/>
+                            </bean>
+                        </set>
+                    </property>
+                </bean>
+            </set>
+        </property>
+    </bean>
+</beans>

@@ -1,0 +1,73 @@
+{
+  "cls" : "wa_application_master",
+  "padding" : 0,
+  "border" : false,
+  "namespace" : "wa",
+  "categoryID" : "com_emc_xcp_artifact_page",
+  "artifactName" : "application_master",
+  "pageTitle" : "${_UI_Page_wa_application_master_title}",
+  "xtype" : "xcp_form",
+  "items" : [ {
+    "xtype" : "xcp_action_container",
+    "actions" : [ ]
+  }, {
+    "xtype" : "xcp_uievent_publisher",
+    "plugins" : [ {
+      "ptype" : "xcp_publish_uievents",
+      "publish" : [ ]
+    } ]
+  }, {
+    "xcpId" : "column_box",
+    "xtype" : "xcp_column_box",
+    "collapsible" : false,
+    "collapseFirst" : true,
+    "border" : false,
+    "defaultMargins" : "5",
+    "layout" : "xcp_columnbox",
+    "cls" : "xcp-master-header",
+    "items" : [ {
+      "xcpId" : "columnhbox",
+      "xtype" : "xcp_columnhbox",
+      "orientation" : "Horizontal",
+      "width" : "100%",
+      "overflow_x" : "hidden",
+      "labelWidth" : 50,
+      "defaultMargins" : "0",
+      "margins" : "0",
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "bottom",
+      "items" : [ {
+        "xcpId" : "navigation_menu",
+        "xtype" : "xcp_navigation_menu",
+        "orientation" : "horizontal",
+        "xcp_menu_onhover" : true,
+        "enableOverflow" : true,
+        "items" : [ {
+          "xcpId" : "nav_button",
+          "xtype" : "xcp_nav_button",
+          "text" : "${_UI_Page_wa_application_master_nav_button_text}",
+          "navType" : "none"
+        }, {
+          "xcpId" : "nav_button1",
+          "xtype" : "xcp_nav_button",
+          "text" : "${_UI_Page_wa_application_master_nav_button1_text}",
+          "navType" : "none"
+        }, {
+          "xcpId" : "nav_button2",
+          "xtype" : "xcp_nav_button",
+          "text" : "${_UI_Page_wa_application_master_nav_button2_text}",
+          "navType" : "none"
+        }, {
+          "xcpId" : "user_button",
+          "xtype" : "xcp_user_button"
+        } ]
+      } ]
+    } ]
+  }, {
+    "xcpId" : "page",
+    "xtype" : "xcp_page",
+    "cls" : "xcp-content-area",
+    "margin" : "0 0 0 0"
+  } ]
+}

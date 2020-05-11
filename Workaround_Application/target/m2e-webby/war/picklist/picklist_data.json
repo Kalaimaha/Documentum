@@ -1,0 +1,216 @@
+{
+"_xcpMemberTypes":{
+"model": "xcp.picklist.models.StringModel",
+"data": [{
+"value": "user",
+"label": "${_UI_PickList__xcpMemberTypes_user}"
+},
+{
+"value": "group",
+"label": "${_UI_PickList__xcpMemberTypes_group}"
+}]
+},
+"xcp_LocaleStore":{
+"model": "xcp.picklist.models.StringModel",
+"data": []
+},
+"xcp_basic_permission":{
+"model": "xcp.picklist.models.IntegerModel",
+"data": [{
+"value": 0,
+"label": "${_UI_PickList_xcp_basic_permission_0}"
+},
+{
+"value": 1,
+"label": "${_UI_PickList_xcp_basic_permission_1}"
+},
+{
+"value": 2,
+"label": "${_UI_PickList_xcp_basic_permission_2}"
+},
+{
+"value": 3,
+"label": "${_UI_PickList_xcp_basic_permission_3}"
+},
+{
+"value": 4,
+"label": "${_UI_PickList_xcp_basic_permission_4}"
+},
+{
+"value": 5,
+"label": "${_UI_PickList_xcp_basic_permission_5}"
+},
+{
+"value": 6,
+"label": "${_UI_PickList_xcp_basic_permission_6}"
+},
+{
+"value": 7,
+"label": "${_UI_PickList_xcp_basic_permission_7}"
+}]
+},
+"xcp_alert_severity":{
+"model": "xcp.picklist.models.StringModel",
+"data": [{
+"value": "LOW",
+"label": "${_UI_PickList_xcp_alert_severity_LOW}"
+},
+{
+"value": "MEDIUM",
+"label": "${_UI_PickList_xcp_alert_severity_MEDIUM}"
+},
+{
+"value": "HIGH",
+"label": "${_UI_PickList_xcp_alert_severity_HIGH}"
+}]
+},
+"xcp_wq_view_filter":{
+"model": "xcp.picklist.models.StringModel",
+"data": [{
+"value": "SHOW_ALL_TASKS",
+"label": "${_UI_PickList_xcp_wq_view_filter_SHOW_ALL_TASKS}"
+},
+{
+"value": "SHOW_PROCESSOR_ELIGIBLE_AND_OWNED_TASKS",
+"label": "${_UI_PickList_xcp_wq_view_filter_SHOW_PROCESSOR_ELIGIBLE_AND_OWNED_TASKS}"
+},
+{
+"value": "SHOW_UNASSIGNED_TASKS",
+"label": "${_UI_PickList_xcp_wq_view_filter_SHOW_UNASSIGNED_TASKS}"
+},
+{
+"value": "SHOW_PROCESSOR_ELIGIBLE_TASKS",
+"label": "${_UI_PickList_xcp_wq_view_filter_SHOW_PROCESSOR_ELIGIBLE_TASKS}"
+}]
+},
+"xcp_versionList":{
+"model": "xcp.picklist.models.IntegerModel",
+"data": [{
+"value": 0,
+"label": "${_UI_PickList_xcp_versionList_0}"
+},
+{
+"value": 1,
+"label": "${_UI_PickList_xcp_versionList_1}"
+},
+{
+"value": 2,
+"label": "${_UI_PickList_xcp_versionList_2}"
+},
+{
+"value": 3,
+"label": "${_UI_PickList_xcp_versionList_3}"
+}]
+},
+"xcp_taskstatuspiclkist":{
+"model": "xcp.picklist.models.StringModel",
+"data": [{
+"value": "dormant",
+"label": "${_UI_PickList_xcp_taskstatuspiclkist_dormant}"
+},
+{
+"value": "acquired",
+"label": "${_UI_PickList_xcp_taskstatuspiclkist_acquired}"
+},
+{
+"value": "ready",
+"label": "${_UI_PickList_xcp_taskstatuspiclkist_ready}"
+},
+{
+"value": "paused",
+"label": "${_UI_PickList_xcp_taskstatuspiclkist_paused}"
+}]
+},
+"xcp_alert_status":{
+"model": "xcp.picklist.models.StringModel",
+"data": [{
+"value": "NEW",
+"label": "${_UI_PickList_xcp_alert_status_NEW}"
+},
+{
+"value": "ACKNOWLEDGED",
+"label": "${_UI_PickList_xcp_alert_status_ACKNOWLEDGED}"
+},
+{
+"value": "CLOSED",
+"label": "${_UI_PickList_xcp_alert_status_CLOSED}"
+}]
+},
+"xcp_extended_permission":{
+"model": "xcp.picklist.models.StringModel",
+"data": [{
+"value": "EXECUTEPROC",
+"label": "${_UI_PickList_xcp_extended_permission_EXECUTEPROC}"
+},
+{
+"value": "CHANGELOCATION",
+"label": "${_UI_PickList_xcp_extended_permission_CHANGELOCATION}"
+},
+{
+"value": "CHANGESTATE",
+"label": "${_UI_PickList_xcp_extended_permission_CHANGESTATE}"
+},
+{
+"value": "CHANGEPERMIT",
+"label": "${_UI_PickList_xcp_extended_permission_CHANGEPERMIT}"
+},
+{
+"value": "CHANGEOWNER",
+"label": "${_UI_PickList_xcp_extended_permission_CHANGEOWNER}"
+},
+{
+"value": "DELETEOBJECT",
+"label": "${_UI_PickList_xcp_extended_permission_DELETEOBJECT}"
+},
+{
+"value": "CHANGEFOLDERLINKS",
+"label": "${_UI_PickList_xcp_extended_permission_CHANGEFOLDERLINKS}"
+}]
+},
+"xcp_task_state":{
+"model": "xcp.picklist.models.IntegerModel",
+"data": [{
+"value": 0,
+"label": "${_UI_PickList_xcp_task_state_0}"
+},
+{
+"value": 1,
+"label": "${_UI_PickList_xcp_task_state_1}"
+},
+{
+"value": 2,
+"label": "${_UI_PickList_xcp_task_state_2}"
+},
+{
+"value": 3,
+"label": "${_UI_PickList_xcp_task_state_3}"
+},
+{
+"value": 4,
+"label": "${_UI_PickList_xcp_task_state_4}"
+},
+{
+"value": 5,
+"label": "${_UI_PickList_xcp_task_state_5}"
+},
+{
+"value": 6,
+"label": "${_UI_PickList_xcp_task_state_6}"
+},
+{
+"value": 7,
+"label": "${_UI_PickList_xcp_task_state_7}"
+}]
+},
+"xcp_taskwqflagpicklist":{
+"model": "xcp.picklist.models.IntegerModel",
+"data": [{
+"value": 1,
+"label": "${_UI_PickList_xcp_taskwqflagpicklist_1}"
+},
+{
+"value": 0,
+"label": "${_UI_PickList_xcp_taskwqflagpicklist_0}"
+}]
+}
+}

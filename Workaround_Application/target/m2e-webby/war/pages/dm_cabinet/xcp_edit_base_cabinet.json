@@ -1,0 +1,132 @@
+{
+  "cls" : "wa_dm_cabinet_edit_base_cabinet",
+  "padding" : 0,
+  "border" : false,
+  "namespace" : "xcp",
+  "categoryID" : "com_emc_xcp_artifact_page",
+  "artifactName" : "edit_base_cabinet",
+  "pageTitle" : "${_UI_Page_xcp_edit_base_cabinet_title}",
+  "xtype" : "xcp_form",
+  "models" : [ "dm_cabinet" ],
+  "items" : [ {
+    "xtype" : "xcp_action_container",
+    "actions" : [ {
+      "xcpId" : "da_def_update_dm_cabinet",
+      "actionModel" : "dm_cabinet",
+      "actionType" : "update",
+      "plugins" : [ {
+        "ptype" : "xcp_expression_properties",
+        "expression" : [ {
+          "propertyId" : "object_name",
+          "setterFunName" : "setInputProperty",
+          "etype" : "object_name",
+          "events" : [ "object_name.change" ],
+          "disableInitialEval" : false
+        }, {
+          "propertyId" : "id",
+          "setterFunName" : "setInputProperty",
+          "etype" : "id",
+          "events" : [ "dm_cabinet.change", "dm_cabinet.load" ],
+          "disableInitialEval" : false
+        } ],
+        "mapping" : {
+          "object_name" : ["object_name" ]
+        }
+      } ]
+    } ]
+  }, {
+    "xtype" : "xcp_uievent_publisher",
+    "plugins" : [ {
+      "ptype" : "xcp_publish_uievents",
+      "publish" : [ ]
+    } ]
+  }, {
+    "xcpId" : "column_box",
+    "xtype" : "xcp_column_box",
+    "collapsible" : false,
+    "collapseFirst" : true,
+    "border" : false,
+    "defaultMargins" : "5",
+    "layout" : "xcp_columnbox",
+    "plugins" : [ {
+      "ptype" : "xcp_expression_properties",
+      "expression" : [ {
+        "propertyId" : "collapsed",
+        "setterFunName" : "setCollapsed",
+        "etype" : "column_box_collapsed",
+        "disableProcessingOnRender" : true
+      } ]
+    } ],
+    "items" : [ {
+      "xcpId" : "columnvbox",
+      "xtype" : "xcp_columnvbox",
+      "orientation" : "Vertical",
+      "split" : true,
+      "overflow_x" : "hidden",
+      "labelWidth" : 150,
+      "labelAlign" : "left",
+      "halign" : "left",
+      "valign" : "top",
+      "defaultMargins" : "5",
+      "items" : [ {
+        "xcpId" : "object_name",
+        "xtype" : "xcp_text_input",
+        "fieldLabel" : "${_UI_Page_xcp_edit_base_cabinet_object_name_fieldLabel}",
+        "hstretch" : true,
+        "valueType" : "STRING",
+        "name" : "dm_cabinet@object_name"
+      } ]
+    } ]
+  }, {
+    "xcpId" : "column_box1",
+    "xtype" : "xcp_column_box",
+    "collapsible" : false,
+    "collapseFirst" : true,
+    "border" : false,
+    "defaultMargins" : "5",
+    "layout" : "xcp_columnbox",
+    "plugins" : [ {
+      "ptype" : "xcp_expression_properties",
+      "expression" : [ {
+        "propertyId" : "collapsed",
+        "setterFunName" : "setCollapsed",
+        "etype" : "column_box1_collapsed",
+        "disableProcessingOnRender" : true
+      } ]
+    } ],
+    "items" : [ {
+      "xcpId" : "columnhbox",
+      "xtype" : "xcp_columnhbox",
+      "orientation" : "Horizontal",
+      "overflow_x" : "hidden",
+      "labelWidth" : 50,
+      "defaultMargins" : "5",
+      "labelAlign" : "left",
+      "halign" : "right",
+      "valign" : "top",
+      "items" : [ {
+        "xcpId" : "button",
+        "xtype" : "xcp_button",
+        "text" : "${_UI_Page_xcp_edit_base_cabinet_button_text}",
+        "actionInstanceId" : "da_def_update_dm_cabinet",
+        "defaultConfirmationPrompt" : "${_UI_Page_xcp_edit_base_cabinet_button_defaultConfirmationPrompt}",
+        "showConfirmation" : true,
+        "redirectStyle" : "specified",
+        "showSuccessNotification" : true,
+        "navType" : "page_static",
+        "navPageId" : "xcp_view_base_cabinet",
+        "plugins" : [ {
+          "ptype" : "xcp_expression_properties",
+          "expression" : [ {
+            "propertyId" : "navObjectId",
+            "setterFunName" : "setNavObjectId",
+            "etype" : "button_navObjectId",
+            "events" : [ "dm_cabinet.change", "dm_cabinet.load" ],
+            "disableInitialEval" : false,
+            "disableProcessingOnRender" : false
+          } ]
+        } ]
+      } ]
+    } ]
+  } ]
+}
