@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-SymbolicName: wa.Workaround_Application
 Bundle-Name: Workaround_Application
-Bundle-Version: 1.0.0.202005120035
+Bundle-Version: 1.0.0.202005140013
 Bundle-ClassPath: .
 Require-Bundle: xcpcomm.xcpcommons;bundle-version="16.4.0", xcpui.xcpu
  i;bundle-version="16.4.0", xcp.xcpcore;bundle-version="16.4.0"

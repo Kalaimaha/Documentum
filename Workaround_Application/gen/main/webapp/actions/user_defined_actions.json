@@ -1,79 +1,4 @@
 {"xcp_currenttask" : {
-    "xcp_reassign_task" : {
-      "namespace" : "xcp",
-      "categoryID" : "com_emc_xcp_artifact_actionFlow",
-      "artifactName" : "reassign_task",
-      "flowDef" : {
-        "action-type" : "ReassignTask",
-        "actionmodel" : {
-          "name" : "xcp_da_def_reassign_currenttask",
-          "attribute-mapping" : {
-            "xtype" : "xcp_actionflow_input_container",
-            "plugins" : [ {
-              "ptype" : "xcp_expression_properties",
-              "expression" : [ ]
-            } ]
-          }
-        },
-        "publish-uievent" : {
-          "xtype" : "xcp_uievent_publisher",
-          "plugins" : [ {
-            "ptype" : "xcp_publish_uievents",
-            "publish" : [ ]
-          } ]
-        },
-        "initial-state" : "viewState_user_from_queue",
-        "view-state" : [ {
-          "id" : "viewState_user_from_queue",
-          "xcpId" : "user_from_queue",
-          "pageUrl" : "application/xcp_user_from_queue",
-          "transition" : [ {
-            "on" : "cancel",
-            "to" : "cancel"
-          }, {
-            "on" : "finish",
-            "to" : "finish"
-          } ]
-        } ],
-        "action-state" : [ {
-          "id" : "finish",
-          "actionInstanceId" : "da_actionflow_reassign_task",
-          "transition" : [ {
-            "on" : "success",
-            "to" : "success"
-          }, {
-            "on" : "error",
-            "to" : "error"
-          } ]
-        } ],
-        "end-state" : [ {
-          "id" : "success"
-        }, {
-          "id" : "error"
-        }, {
-          "id" : "cancel"
-        } ],
-        "action-instance" : [ {
-          "xcpId" : "da_actionflow_reassign_task",
-          "actionType" : "xcp_reassign_task",
-          "actionModel" : "xcp_da_def_reassign_currenttask",
-          "plugins" : [ {
-            "ptype" : "xcp_expression_properties",
-            "expression" : [ {
-              "propertyId" : "id",
-              "setterFunName" : "setInputProperty",
-              "etype" : "id"
-            }, {
-              "propertyId" : "userName",
-              "setterFunName" : "setInputProperty",
-              "etype" : "userName",
-              "events" : [ "user_from_queue.dropdown_list.change" ],
-              "disableInitialEval" : false
-            } ]
-          } ]
-        } ]
-      }
-    },
     "xcp_hold_task" : {
       "namespace" : "xcp",
       "categoryID" : "com_emc_xcp_artifact_actionFlow",
@@ -149,14 +74,14 @@
         } ]
       }
     },
-    "xcp_changeworkqueue" : {
+    "xcp_reassign_task" : {
       "namespace" : "xcp",
       "categoryID" : "com_emc_xcp_artifact_actionFlow",
-      "artifactName" : "changeworkqueue",
+      "artifactName" : "reassign_task",
       "flowDef" : {
-        "action-type" : "ChangeWorkQueue",
+        "action-type" : "ReassignTask",
         "actionmodel" : {
-          "name" : "xcp_da_def_changeworkqueue",
+          "name" : "xcp_da_def_reassign_currenttask",
           "attribute-mapping" : {
             "xtype" : "xcp_actionflow_input_container",
             "plugins" : [ {
@@ -172,11 +97,11 @@
             "publish" : [ ]
           } ]
         },
-        "initial-state" : "viewState_queue_selection",
+        "initial-state" : "viewState_user_from_queue",
         "view-state" : [ {
-          "id" : "viewState_queue_selection",
-          "xcpId" : "queue_selection",
-          "pageUrl" : "application/xcp_queue_selection",
+          "id" : "viewState_user_from_queue",
+          "xcpId" : "user_from_queue",
+          "pageUrl" : "application/xcp_user_from_queue",
           "transition" : [ {
             "on" : "cancel",
             "to" : "cancel"
@@ -187,7 +112,7 @@
         } ],
         "action-state" : [ {
           "id" : "finish",
-          "actionInstanceId" : "da_actionflow_changeworkqueue",
+          "actionInstanceId" : "da_actionflow_reassign_task",
           "transition" : [ {
             "on" : "success",
             "to" : "success"
@@ -204,9 +129,9 @@
           "id" : "cancel"
         } ],
         "action-instance" : [ {
-          "xcpId" : "da_actionflow_changeworkqueue",
-          "actionType" : "xcp_changeworkqueue",
-          "actionModel" : "xcp_da_def_changeworkqueue",
+          "xcpId" : "da_actionflow_reassign_task",
+          "actionType" : "xcp_reassign_task",
+          "actionModel" : "xcp_da_def_reassign_currenttask",
           "plugins" : [ {
             "ptype" : "xcp_expression_properties",
             "expression" : [ {
@@ -214,10 +139,10 @@
               "setterFunName" : "setInputProperty",
               "etype" : "id"
             }, {
-              "propertyId" : "queueName",
+              "propertyId" : "userName",
               "setterFunName" : "setInputProperty",
-              "etype" : "queueName",
-              "events" : [ "queue_selection.queue_dropdown_list.change" ],
+              "etype" : "userName",
+              "events" : [ "user_from_queue.dropdown_list.change" ],
               "disableInitialEval" : false
             } ]
           } ]
@@ -298,8 +223,412 @@
           } ]
         } ]
       }
+    },
+    "xcp_changeworkqueue" : {
+      "namespace" : "xcp",
+      "categoryID" : "com_emc_xcp_artifact_actionFlow",
+      "artifactName" : "changeworkqueue",
+      "flowDef" : {
+        "action-type" : "ChangeWorkQueue",
+        "actionmodel" : {
+          "name" : "xcp_da_def_changeworkqueue",
+          "attribute-mapping" : {
+            "xtype" : "xcp_actionflow_input_container",
+            "plugins" : [ {
+              "ptype" : "xcp_expression_properties",
+              "expression" : [ ]
+            } ]
+          }
+        },
+        "publish-uievent" : {
+          "xtype" : "xcp_uievent_publisher",
+          "plugins" : [ {
+            "ptype" : "xcp_publish_uievents",
+            "publish" : [ ]
+          } ]
+        },
+        "initial-state" : "viewState_queue_selection",
+        "view-state" : [ {
+          "id" : "viewState_queue_selection",
+          "xcpId" : "queue_selection",
+          "pageUrl" : "application/xcp_queue_selection",
+          "transition" : [ {
+            "on" : "cancel",
+            "to" : "cancel"
+          }, {
+            "on" : "finish",
+            "to" : "finish"
+          } ]
+        } ],
+        "action-state" : [ {
+          "id" : "finish",
+          "actionInstanceId" : "da_actionflow_changeworkqueue",
+          "transition" : [ {
+            "on" : "success",
+            "to" : "success"
+          }, {
+            "on" : "error",
+            "to" : "error"
+          } ]
+        } ],
+        "end-state" : [ {
+          "id" : "success"
+        }, {
+          "id" : "error"
+        }, {
+          "id" : "cancel"
+        } ],
+        "action-instance" : [ {
+          "xcpId" : "da_actionflow_changeworkqueue",
+          "actionType" : "xcp_changeworkqueue",
+          "actionModel" : "xcp_da_def_changeworkqueue",
+          "plugins" : [ {
+            "ptype" : "xcp_expression_properties",
+            "expression" : [ {
+              "propertyId" : "id",
+              "setterFunName" : "setInputProperty",
+              "etype" : "id"
+            }, {
+              "propertyId" : "queueName",
+              "setterFunName" : "setInputProperty",
+              "etype" : "queueName",
+              "events" : [ "queue_selection.queue_dropdown_list.change" ],
+              "disableInitialEval" : false
+            } ]
+          } ]
+        } ]
+      }
     }
   },"APPLICATION" : {
+    "xcp_def_imp_af" : {
+      "namespace" : "xcp",
+      "categoryID" : "com_emc_xcp_artifact_actionFlow",
+      "artifactName" : "def_imp_af",
+      "flowDef" : {
+        "action-type" : "Custom",
+        "actionmodel" : {
+          "name" : "xcp_def_imp_af",
+          "attribute-mapping" : {
+            "xtype" : "xcp_actionflow_input_container",
+            "plugins" : [ {
+              "ptype" : "xcp_expression_properties",
+              "expression" : [ ]
+            } ]
+          }
+        },
+        "publish-uievent" : {
+          "xtype" : "xcp_uievent_publisher",
+          "plugins" : [ {
+            "ptype" : "xcp_publish_uievents",
+            "publish" : [ ]
+          } ]
+        },
+        "initial-state" : "viewState_def_imp_af_step_1",
+        "view-state" : [ {
+          "id" : "viewState_def_imp_af_step_1",
+          "xcpId" : "def_imp_af_step_1",
+          "pageUrl" : "application/xcp_def_imp_af_step_1",
+          "transition" : [ {
+            "on" : "cancel",
+            "to" : "cancel"
+          }, {
+            "on" : "finish",
+            "to" : "finish"
+          } ]
+        } ],
+        "action-state" : [ {
+          "id" : "finish",
+          "actionInstanceId" : "da_actionflow_def_imp_af_da_def_importtemplate_dm_document",
+          "plugins" : [ {
+            "ptype" : "xcp_expression_properties",
+            "expression" : [ {
+              "propertyId" : "finish",
+              "setterFunName" : "setEnablement",
+              "etype" : "finish",
+              "events" : [ "def_imp_af_step_1.fileselector.change", "def_imp_af_step_1.fileselector.statusChange" ],
+              "disableInitialEval" : false
+            } ]
+          } ],
+          "transition" : [ {
+            "on" : "success",
+            "to" : "success"
+          }, {
+            "on" : "error",
+            "to" : "error"
+          } ]
+        } ],
+        "end-state" : [ {
+          "id" : "success"
+        }, {
+          "id" : "error"
+        }, {
+          "id" : "cancel"
+        } ],
+        "action-instance" : [ {
+          "xcpId" : "da_actionflow_def_imp_af_da_def_importtemplate_dm_document",
+          "actionType" : "importTemplate",
+          "actionModel" : "dm_document",
+          "plugins" : [ {
+            "ptype" : "xcp_expression_properties",
+            "expression" : [ {
+              "propertyId" : "folder_id",
+              "setterFunName" : "setInputProperty",
+              "etype" : "folder_id",
+              "events" : [ "def_imp_af_step_1.imp_folder_selector.change" ],
+              "disableInitialEval" : false
+            }, {
+              "propertyId" : "content_id",
+              "setterFunName" : "setInputProperty",
+              "etype" : "content_id",
+              "events" : [ "def_imp_af_step_1.fileselector.select" ],
+              "disableInitialEval" : false
+            }, {
+              "propertyId" : "r_object_type",
+              "setterFunName" : "setInputProperty",
+              "etype" : "r_object_type",
+              "events" : [ "def_imp_af_step_1.content_type.change" ],
+              "disableInitialEval" : false
+            }, {
+              "propertyId" : "model",
+              "setterFunName" : "setModel",
+              "etype" : "model",
+              "events" : [ "def_imp_af_step_1.fragment.change" ],
+              "disableInitialEval" : false
+            } ]
+          } ]
+        } ]
+      }
+    },
+    "xcp_def_inv_af" : {
+      "namespace" : "xcp",
+      "categoryID" : "com_emc_xcp_artifact_actionFlow",
+      "artifactName" : "def_inv_af",
+      "flowDef" : {
+        "action-type" : "Custom",
+        "actionmodel" : {
+          "name" : "xcp_def_inv_af",
+          "attribute-mapping" : {
+            "xtype" : "xcp_actionflow_input_container",
+            "plugins" : [ {
+              "ptype" : "xcp_expression_properties",
+              "expression" : [ ]
+            } ]
+          }
+        },
+        "publish-uievent" : {
+          "xtype" : "xcp_uievent_publisher",
+          "plugins" : [ {
+            "ptype" : "xcp_publish_uievents",
+            "publish" : [ ]
+          } ]
+        },
+        "initial-state" : "viewState_def_inv_af_step_1",
+        "view-state" : [ {
+          "id" : "viewState_def_inv_af_step_1",
+          "xcpId" : "def_inv_af_step_1",
+          "pageUrl" : "application/xcp_def_inv_af_step_1",
+          "transition" : [ {
+            "on" : "cancel",
+            "to" : "cancel"
+          }, {
+            "on" : "finish",
+            "to" : "finish"
+          } ]
+        } ],
+        "action-state" : [ {
+          "id" : "finish",
+          "actionInstanceId" : "da_actionflow_def_inv_af_da_def_importnewversiontemplate_dm_document",
+          "plugins" : [ {
+            "ptype" : "xcp_expression_properties",
+            "expression" : [ {
+              "propertyId" : "finish",
+              "setterFunName" : "setEnablement",
+              "etype" : "finish",
+              "events" : [ "def_inv_af_step_1.fileselector.change", "def_inv_af_step_1.fileselector.statusChange" ],
+              "disableInitialEval" : false
+            } ]
+          } ],
+          "transition" : [ {
+            "on" : "success",
+            "to" : "success"
+          }, {
+            "on" : "error",
+            "to" : "error"
+          } ]
+        } ],
+        "end-state" : [ {
+          "id" : "success"
+        }, {
+          "id" : "error"
+        }, {
+          "id" : "cancel"
+        } ],
+        "action-instance" : [ {
+          "xcpId" : "da_actionflow_def_inv_af_da_def_importnewversiontemplate_dm_document",
+          "actionType" : "importNewVersionTemplate",
+          "actionModel" : "dm_document",
+          "plugins" : [ {
+            "ptype" : "xcp_expression_properties",
+            "expression" : [ {
+              "propertyId" : "id",
+              "setterFunName" : "setInputProperty",
+              "etype" : "id",
+              "events" : [ "def_inv_af_step_1.fileselector.select" ],
+              "disableInitialEval" : false
+            }, {
+              "propertyId" : "checkin_version",
+              "setterFunName" : "setInputProperty",
+              "etype" : "checkin_version",
+              "events" : [ "def_inv_af_step_1.version.change" ],
+              "disableInitialEval" : false
+            }, {
+              "propertyId" : "checkin_label",
+              "setterFunName" : "setInputProperty",
+              "etype" : "checkin_label",
+              "events" : [ "def_inv_af_step_1.version_label.change" ],
+              "disableInitialEval" : false
+            }, {
+              "propertyId" : "retain_lock",
+              "setterFunName" : "setInputProperty",
+              "etype" : "retain_lock",
+              "events" : [ "def_inv_af_step_1.retain_lock.change" ],
+              "disableInitialEval" : false
+            }, {
+              "propertyId" : "is_current",
+              "setterFunName" : "setInputProperty",
+              "etype" : "is_current",
+              "events" : [ "def_inv_af_step_1.is_current.change" ],
+              "disableInitialEval" : false
+            }, {
+              "propertyId" : "content_id",
+              "setterFunName" : "setInputProperty",
+              "etype" : "content_id",
+              "events" : [ "def_inv_af_step_1.fileselector.select" ],
+              "disableInitialEval" : false
+            }, {
+              "propertyId" : "r_object_type",
+              "setterFunName" : "setInputProperty",
+              "etype" : "r_object_type",
+              "events" : [ "def_inv_af_step_1.fileselector.select" ],
+              "disableInitialEval" : false
+            }, {
+              "propertyId" : "model",
+              "setterFunName" : "setModel",
+              "etype" : "model",
+              "events" : [ "def_inv_af_step_1.fragment.change" ],
+              "disableInitialEval" : false
+            } ]
+          } ]
+        } ]
+      }
+    },
+    "xcp_default_create_docu" : {
+      "namespace" : "xcp",
+      "categoryID" : "com_emc_xcp_artifact_actionFlow",
+      "artifactName" : "default_create_docu",
+      "flowDef" : {
+        "action-type" : "Custom",
+        "actionmodel" : {
+          "name" : "xcp_default_create_docu",
+          "attribute-mapping" : {
+            "xtype" : "xcp_actionflow_input_container",
+            "plugins" : [ {
+              "ptype" : "xcp_expression_properties",
+              "expression" : [ ]
+            } ]
+          }
+        },
+        "publish-uievent" : {
+          "xtype" : "xcp_uievent_publisher",
+          "plugins" : [ {
+            "ptype" : "xcp_publish_uievents",
+            "publish" : [ ]
+          } ]
+        },
+        "initial-state" : "viewState_default_create_docu",
+        "view-state" : [ {
+          "id" : "viewState_default_create_docu",
+          "xcpId" : "default_create_docu",
+          "pageUrl" : "application/xcp_default_create_docu",
+          "plugins" : [ {
+            "ptype" : "xcp_expression_properties",
+            "expression" : [ {
+              "propertyId" : "next",
+              "setterFunName" : "setEnablement",
+              "etype" : "next"
+            } ]
+          } ],
+          "transition" : [ {
+            "on" : "cancel",
+            "to" : "cancel"
+          }, {
+            "on" : "finish",
+            "to" : "finish"
+          } ]
+        } ],
+        "action-state" : [ {
+          "id" : "finish",
+          "actionInstanceId" : "da_actionflow_default_create_docu_da_def_create_template_dm_document",
+          "plugins" : [ {
+            "ptype" : "xcp_expression_properties",
+            "expression" : [ {
+              "propertyId" : "finish",
+              "setterFunName" : "setEnablement",
+              "etype" : "finish",
+              "events" : [ "default_create_docu.content_type.change", "default_create_docu.doc_template.change", "default_create_docu.fragment.change", "default_create_docu.selector.change" ],
+              "disableInitialEval" : false
+            } ]
+          } ],
+          "transition" : [ {
+            "on" : "success",
+            "to" : "success"
+          }, {
+            "on" : "error",
+            "to" : "error"
+          } ]
+        } ],
+        "end-state" : [ {
+          "id" : "success"
+        }, {
+          "id" : "error"
+        }, {
+          "id" : "cancel"
+        } ],
+        "action-instance" : [ {
+          "xcpId" : "da_actionflow_default_create_docu_da_def_create_template_dm_document",
+          "actionType" : "createDocumentTemplate",
+          "actionModel" : "dm_document",
+          "plugins" : [ {
+            "ptype" : "xcp_expression_properties",
+            "expression" : [ {
+              "propertyId" : "folder_id",
+              "setterFunName" : "setInputProperty",
+              "etype" : "folder_id",
+              "events" : [ "default_create_docu.selector.change" ],
+              "disableInitialEval" : false
+            }, {
+              "propertyId" : "r_object_type",
+              "setterFunName" : "setInputProperty",
+              "etype" : "r_object_type",
+              "events" : [ "default_create_docu.content_type.change" ],
+              "disableInitialEval" : false
+            }, {
+              "propertyId" : "source",
+              "setterFunName" : "setInputProperty",
+              "etype" : "source",
+              "events" : [ "default_create_docu.doc_template.change" ],
+              "disableInitialEval" : false
+            }, {
+              "propertyId" : "model",
+              "setterFunName" : "setModel",
+              "etype" : "model",
+              "events" : [ "default_create_docu.fragment.change" ],
+              "disableInitialEval" : false
+            } ]
+          } ]
+        } ]
+      }
+    },
     "xcp_default_create_fold" : {
       "namespace" : "xcp",
       "categoryID" : "com_emc_xcp_artifact_actionFlow",
@@ -499,401 +828,8 @@
           } ]
         } ]
       }
-    },
-    "xcp_def_inv_af" : {
-      "namespace" : "xcp",
-      "categoryID" : "com_emc_xcp_artifact_actionFlow",
-      "artifactName" : "def_inv_af",
-      "flowDef" : {
-        "action-type" : "Custom",
-        "actionmodel" : {
-          "name" : "xcp_def_inv_af",
-          "attribute-mapping" : {
-            "xtype" : "xcp_actionflow_input_container",
-            "plugins" : [ {
-              "ptype" : "xcp_expression_properties",
-              "expression" : [ ]
-            } ]
-          }
-        },
-        "publish-uievent" : {
-          "xtype" : "xcp_uievent_publisher",
-          "plugins" : [ {
-            "ptype" : "xcp_publish_uievents",
-            "publish" : [ ]
-          } ]
-        },
-        "initial-state" : "viewState_def_inv_af_step_1",
-        "view-state" : [ {
-          "id" : "viewState_def_inv_af_step_1",
-          "xcpId" : "def_inv_af_step_1",
-          "pageUrl" : "application/xcp_def_inv_af_step_1",
-          "transition" : [ {
-            "on" : "cancel",
-            "to" : "cancel"
-          }, {
-            "on" : "finish",
-            "to" : "finish"
-          } ]
-        } ],
-        "action-state" : [ {
-          "id" : "finish",
-          "actionInstanceId" : "da_actionflow_def_inv_af_da_def_importnewversiontemplate_dm_document",
-          "plugins" : [ {
-            "ptype" : "xcp_expression_properties",
-            "expression" : [ {
-              "propertyId" : "finish",
-              "setterFunName" : "setEnablement",
-              "etype" : "finish",
-              "events" : [ "def_inv_af_step_1.fileselector.change", "def_inv_af_step_1.fileselector.statusChange" ],
-              "disableInitialEval" : false
-            } ]
-          } ],
-          "transition" : [ {
-            "on" : "success",
-            "to" : "success"
-          }, {
-            "on" : "error",
-            "to" : "error"
-          } ]
-        } ],
-        "end-state" : [ {
-          "id" : "success"
-        }, {
-          "id" : "error"
-        }, {
-          "id" : "cancel"
-        } ],
-        "action-instance" : [ {
-          "xcpId" : "da_actionflow_def_inv_af_da_def_importnewversiontemplate_dm_document",
-          "actionType" : "importNewVersionTemplate",
-          "actionModel" : "dm_document",
-          "plugins" : [ {
-            "ptype" : "xcp_expression_properties",
-            "expression" : [ {
-              "propertyId" : "id",
-              "setterFunName" : "setInputProperty",
-              "etype" : "id",
-              "events" : [ "def_inv_af_step_1.fileselector.select" ],
-              "disableInitialEval" : false
-            }, {
-              "propertyId" : "checkin_version",
-              "setterFunName" : "setInputProperty",
-              "etype" : "checkin_version",
-              "events" : [ "def_inv_af_step_1.version.change" ],
-              "disableInitialEval" : false
-            }, {
-              "propertyId" : "checkin_label",
-              "setterFunName" : "setInputProperty",
-              "etype" : "checkin_label",
-              "events" : [ "def_inv_af_step_1.version_label.change" ],
-              "disableInitialEval" : false
-            }, {
-              "propertyId" : "retain_lock",
-              "setterFunName" : "setInputProperty",
-              "etype" : "retain_lock",
-              "events" : [ "def_inv_af_step_1.retain_lock.change" ],
-              "disableInitialEval" : false
-            }, {
-              "propertyId" : "is_current",
-              "setterFunName" : "setInputProperty",
-              "etype" : "is_current",
-              "events" : [ "def_inv_af_step_1.is_current.change" ],
-              "disableInitialEval" : false
-            }, {
-              "propertyId" : "content_id",
-              "setterFunName" : "setInputProperty",
-              "etype" : "content_id",
-              "events" : [ "def_inv_af_step_1.fileselector.select" ],
-              "disableInitialEval" : false
-            }, {
-              "propertyId" : "r_object_type",
-              "setterFunName" : "setInputProperty",
-              "etype" : "r_object_type",
-              "events" : [ "def_inv_af_step_1.fileselector.select" ],
-              "disableInitialEval" : false
-            }, {
-              "propertyId" : "model",
-              "setterFunName" : "setModel",
-              "etype" : "model",
-              "events" : [ "def_inv_af_step_1.fragment.change" ],
-              "disableInitialEval" : false
-            } ]
-          } ]
-        } ]
-      }
-    },
-    "xcp_def_imp_af" : {
-      "namespace" : "xcp",
-      "categoryID" : "com_emc_xcp_artifact_actionFlow",
-      "artifactName" : "def_imp_af",
-      "flowDef" : {
-        "action-type" : "Custom",
-        "actionmodel" : {
-          "name" : "xcp_def_imp_af",
-          "attribute-mapping" : {
-            "xtype" : "xcp_actionflow_input_container",
-            "plugins" : [ {
-              "ptype" : "xcp_expression_properties",
-              "expression" : [ ]
-            } ]
-          }
-        },
-        "publish-uievent" : {
-          "xtype" : "xcp_uievent_publisher",
-          "plugins" : [ {
-            "ptype" : "xcp_publish_uievents",
-            "publish" : [ ]
-          } ]
-        },
-        "initial-state" : "viewState_def_imp_af_step_1",
-        "view-state" : [ {
-          "id" : "viewState_def_imp_af_step_1",
-          "xcpId" : "def_imp_af_step_1",
-          "pageUrl" : "application/xcp_def_imp_af_step_1",
-          "transition" : [ {
-            "on" : "cancel",
-            "to" : "cancel"
-          }, {
-            "on" : "finish",
-            "to" : "finish"
-          } ]
-        } ],
-        "action-state" : [ {
-          "id" : "finish",
-          "actionInstanceId" : "da_actionflow_def_imp_af_da_def_importtemplate_dm_document",
-          "plugins" : [ {
-            "ptype" : "xcp_expression_properties",
-            "expression" : [ {
-              "propertyId" : "finish",
-              "setterFunName" : "setEnablement",
-              "etype" : "finish",
-              "events" : [ "def_imp_af_step_1.fileselector.change", "def_imp_af_step_1.fileselector.statusChange" ],
-              "disableInitialEval" : false
-            } ]
-          } ],
-          "transition" : [ {
-            "on" : "success",
-            "to" : "success"
-          }, {
-            "on" : "error",
-            "to" : "error"
-          } ]
-        } ],
-        "end-state" : [ {
-          "id" : "success"
-        }, {
-          "id" : "error"
-        }, {
-          "id" : "cancel"
-        } ],
-        "action-instance" : [ {
-          "xcpId" : "da_actionflow_def_imp_af_da_def_importtemplate_dm_document",
-          "actionType" : "importTemplate",
-          "actionModel" : "dm_document",
-          "plugins" : [ {
-            "ptype" : "xcp_expression_properties",
-            "expression" : [ {
-              "propertyId" : "folder_id",
-              "setterFunName" : "setInputProperty",
-              "etype" : "folder_id",
-              "events" : [ "def_imp_af_step_1.imp_folder_selector.change" ],
-              "disableInitialEval" : false
-            }, {
-              "propertyId" : "content_id",
-              "setterFunName" : "setInputProperty",
-              "etype" : "content_id",
-              "events" : [ "def_imp_af_step_1.fileselector.select" ],
-              "disableInitialEval" : false
-            }, {
-              "propertyId" : "r_object_type",
-              "setterFunName" : "setInputProperty",
-              "etype" : "r_object_type",
-              "events" : [ "def_imp_af_step_1.content_type.change" ],
-              "disableInitialEval" : false
-            }, {
-              "propertyId" : "model",
-              "setterFunName" : "setModel",
-              "etype" : "model",
-              "events" : [ "def_imp_af_step_1.fragment.change" ],
-              "disableInitialEval" : false
-            } ]
-          } ]
-        } ]
-      }
-    },
-    "xcp_default_create_docu" : {
-      "namespace" : "xcp",
-      "categoryID" : "com_emc_xcp_artifact_actionFlow",
-      "artifactName" : "default_create_docu",
-      "flowDef" : {
-        "action-type" : "Custom",
-        "actionmodel" : {
-          "name" : "xcp_default_create_docu",
-          "attribute-mapping" : {
-            "xtype" : "xcp_actionflow_input_container",
-            "plugins" : [ {
-              "ptype" : "xcp_expression_properties",
-              "expression" : [ ]
-            } ]
-          }
-        },
-        "publish-uievent" : {
-          "xtype" : "xcp_uievent_publisher",
-          "plugins" : [ {
-            "ptype" : "xcp_publish_uievents",
-            "publish" : [ ]
-          } ]
-        },
-        "initial-state" : "viewState_default_create_docu",
-        "view-state" : [ {
-          "id" : "viewState_default_create_docu",
-          "xcpId" : "default_create_docu",
-          "pageUrl" : "application/xcp_default_create_docu",
-          "plugins" : [ {
-            "ptype" : "xcp_expression_properties",
-            "expression" : [ {
-              "propertyId" : "next",
-              "setterFunName" : "setEnablement",
-              "etype" : "next"
-            } ]
-          } ],
-          "transition" : [ {
-            "on" : "cancel",
-            "to" : "cancel"
-          }, {
-            "on" : "finish",
-            "to" : "finish"
-          } ]
-        } ],
-        "action-state" : [ {
-          "id" : "finish",
-          "actionInstanceId" : "da_actionflow_default_create_docu_da_def_create_template_dm_document",
-          "plugins" : [ {
-            "ptype" : "xcp_expression_properties",
-            "expression" : [ {
-              "propertyId" : "finish",
-              "setterFunName" : "setEnablement",
-              "etype" : "finish",
-              "events" : [ "default_create_docu.content_type.change", "default_create_docu.doc_template.change", "default_create_docu.fragment.change", "default_create_docu.selector.change" ],
-              "disableInitialEval" : false
-            } ]
-          } ],
-          "transition" : [ {
-            "on" : "success",
-            "to" : "success"
-          }, {
-            "on" : "error",
-            "to" : "error"
-          } ]
-        } ],
-        "end-state" : [ {
-          "id" : "success"
-        }, {
-          "id" : "error"
-        }, {
-          "id" : "cancel"
-        } ],
-        "action-instance" : [ {
-          "xcpId" : "da_actionflow_default_create_docu_da_def_create_template_dm_document",
-          "actionType" : "createDocumentTemplate",
-          "actionModel" : "dm_document",
-          "plugins" : [ {
-            "ptype" : "xcp_expression_properties",
-            "expression" : [ {
-              "propertyId" : "folder_id",
-              "setterFunName" : "setInputProperty",
-              "etype" : "folder_id",
-              "events" : [ "default_create_docu.selector.change" ],
-              "disableInitialEval" : false
-            }, {
-              "propertyId" : "r_object_type",
-              "setterFunName" : "setInputProperty",
-              "etype" : "r_object_type",
-              "events" : [ "default_create_docu.content_type.change" ],
-              "disableInitialEval" : false
-            }, {
-              "propertyId" : "source",
-              "setterFunName" : "setInputProperty",
-              "etype" : "source",
-              "events" : [ "default_create_docu.doc_template.change" ],
-              "disableInitialEval" : false
-            }, {
-              "propertyId" : "model",
-              "setterFunName" : "setModel",
-              "etype" : "model",
-              "events" : [ "default_create_docu.fragment.change" ],
-              "disableInitialEval" : false
-            } ]
-          } ]
-        } ]
-      }
     }
   },"dm_document" : {
-    "xcp_selector_content" : {
-      "namespace" : "xcp",
-      "categoryID" : "com_emc_xcp_artifact_actionFlow",
-      "artifactName" : "selector_content",
-      "flowDef" : {
-        "action-type" : "Custom",
-        "actionmodel" : {
-          "name" : "xcp_RootBO"
-        },
-        "publish-uievent" : {
-          "xtype" : "xcp_uievent_publisher",
-          "plugins" : [ {
-            "ptype" : "xcp_publish_uievents",
-            "publish" : [ ]
-          } ]
-        },
-        "initial-state" : "viewState_selector_content_st",
-        "view-state" : [ {
-          "id" : "viewState_selector_content_st",
-          "xcpId" : "selector_content_st",
-          "pageUrl" : "dm_document/dm_document_xcp_selector_content_st",
-          "transition" : [ {
-            "on" : "cancel",
-            "to" : "cancel"
-          }, {
-            "on" : "finish",
-            "to" : "finish"
-          } ]
-        } ],
-        "action-state" : [ {
-          "id" : "finish",
-          "actionInstanceId" : "da_actionflow_selector_content",
-          "transition" : [ {
-            "on" : "success",
-            "to" : "success"
-          }, {
-            "on" : "error",
-            "to" : "error"
-          } ]
-        } ],
-        "end-state" : [ {
-          "id" : "success"
-        }, {
-          "id" : "error"
-        }, {
-          "id" : "cancel"
-        } ],
-        "action-instance" : [ {
-          "xcpId" : "da_actionflow_selector_content",
-          "actionType" : "selector",
-          "actionModel" : "xcp_RootBO",
-          "plugins" : [ {
-            "ptype" : "xcp_expression_properties",
-            "expression" : [ {
-              "propertyId" : "selection",
-              "setterFunName" : "setInputProperty",
-              "etype" : "selection",
-              "events" : [ "selector_content_st.results_list.selectionchange", "selector_content_st.results_list.rowedited", "selector_content_st.results_list.rowadded", "selector_content_st.results_list.rowremoved", "selector_content_st.results_list.rowmoved" ],
-              "disableInitialEval" : false
-            } ]
-          } ]
-        } ]
-      }
-    },
     "xcp_attachment_sel" : {
       "namespace" : "xcp",
       "categoryID" : "com_emc_xcp_artifact_actionFlow",
@@ -966,6 +902,70 @@
               "setterFunName" : "setInputProperty",
               "etype" : "selection",
               "events" : [ "attachment_step.value_display.change" ],
+              "disableInitialEval" : false
+            } ]
+          } ]
+        } ]
+      }
+    },
+    "xcp_selector_content" : {
+      "namespace" : "xcp",
+      "categoryID" : "com_emc_xcp_artifact_actionFlow",
+      "artifactName" : "selector_content",
+      "flowDef" : {
+        "action-type" : "Custom",
+        "actionmodel" : {
+          "name" : "xcp_RootBO"
+        },
+        "publish-uievent" : {
+          "xtype" : "xcp_uievent_publisher",
+          "plugins" : [ {
+            "ptype" : "xcp_publish_uievents",
+            "publish" : [ ]
+          } ]
+        },
+        "initial-state" : "viewState_selector_content_st",
+        "view-state" : [ {
+          "id" : "viewState_selector_content_st",
+          "xcpId" : "selector_content_st",
+          "pageUrl" : "dm_document/dm_document_xcp_selector_content_st",
+          "transition" : [ {
+            "on" : "cancel",
+            "to" : "cancel"
+          }, {
+            "on" : "finish",
+            "to" : "finish"
+          } ]
+        } ],
+        "action-state" : [ {
+          "id" : "finish",
+          "actionInstanceId" : "da_actionflow_selector_content",
+          "transition" : [ {
+            "on" : "success",
+            "to" : "success"
+          }, {
+            "on" : "error",
+            "to" : "error"
+          } ]
+        } ],
+        "end-state" : [ {
+          "id" : "success"
+        }, {
+          "id" : "error"
+        }, {
+          "id" : "cancel"
+        } ],
+        "action-instance" : [ {
+          "xcpId" : "da_actionflow_selector_content",
+          "actionType" : "selector",
+          "actionModel" : "xcp_RootBO",
+          "plugins" : [ {
+            "ptype" : "xcp_expression_properties",
+            "expression" : [ {
+              "propertyId" : "selection",
+              "setterFunName" : "setInputProperty",
+              "etype" : "selection",
+              "events" : [ "selector_content_st.results_list.selectionchange", "selector_content_st.results_list.rowedited", "selector_content_st.results_list.rowadded", "selector_content_st.results_list.rowremoved", "selector_content_st.results_list.rowmoved" ],
               "disableInitialEval" : false
             } ]
           } ]
